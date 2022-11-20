@@ -14,6 +14,7 @@
                 <li><a href="{% url 'index' %}" class="active">Домой</a></li>
                 <li><a href="#">О нас</a></li>
                 <li><a href="#{% url 'portfolio_index' %}">Портфолио</a></li>
+                <li><a href="#{% url 'services_index' %}">Услуги</a></li>
                 <li><a href="#">Команда</a></li>
                 <li><a href="#">Связаться</a></li>
             </ul>
@@ -91,24 +92,14 @@
                     </a>
                    
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Страницы
-                        <!-- <small class="hot alert-danger text-danger">hot</small> -->
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                        <li><a class="dropdown-item" href="page-about-app.html">about</a></li>
-                        <li><a class="dropdown-item" href="page-product-app.html">product</a></li>
-                        <li><a class="dropdown-item" href="page-services-app.html">services</a></li>
-                        <li><a class="dropdown-item" href="page-shop-app.html">shop</a></li>
-                        <li><a class="dropdown-item" href="page-single-project-app.html">single project</a></li>
-                        <li><a class="dropdown-item" href="page-single-post-app.html">single post</a></li>
-                    </ul>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'portfolio_index' %}">
                         Портфолио
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'services_index' %}">
+                        Услуги
                     </a>
                 </li>
                 <li class="nav-item">
@@ -117,7 +108,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="page-contact-app.html">
+                    <a class="nav-link" href="{% url 'contact' %}">
                         <!-- <img src="assets/img/icons/nav_icon/price.png" alt="" class="icon-15 me-1"> -->
                         Связаться
                     </a>

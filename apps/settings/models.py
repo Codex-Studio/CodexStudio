@@ -101,3 +101,23 @@ class Partners(models.Model):
     class Meta:
         verbose_name = "Партнер"
         verbose_name_plural = "Партнеры"
+
+class Service(models.Model):
+    title = models.CharField(
+        max_length=255,
+        verbose_name="Имя услуги"
+    )
+    icon = models.ImageField(
+        upload_to="service_icon/",
+        verbose_name="Иконка услуги"
+    )
+    price = models.PositiveIntegerField(
+        verbose_name="Цена услуги"
+    )
+
+    def __str__(self):
+        return self.title 
+
+    class Meta:
+        verbose_name = "Услуга"
+        verbose_name_plural = "Услуги"
