@@ -121,3 +121,25 @@ class Service(models.Model):
     class Meta:
         verbose_name = "Услуга"
         verbose_name_plural = "Услуги"
+
+class AboutUs(models.Model):
+    title = models.CharField(
+        max_length=255,
+        verbose_name="Заголовок"
+    )
+    description = models.TextField(
+        verbose_name="Описание"
+    )
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='project_images/',
+        verbose_name="Фотография проекта"
+    )
+
+    def __str__(self):
+        return self.title 
+
+    class Meta:
+        verbose_name = "О нас"
+        verbose_name_plural = "О нас"
