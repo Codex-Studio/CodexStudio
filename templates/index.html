@@ -72,11 +72,11 @@
                 <div class="section-head text-center style-4 mb-40">
                     <div class="top-title mb-10">
                         <img src="{% static 'assets/img/line_l.png' %}" alt="">
-                        <h5> Наши услуги </h5>
+                        <h5> {{ setting.title }} </h5>
                         <img src="{% static 'assets/img/line_r.png' %}" alt="">
                     </div>
                     <h2 class="">
-                        Наши <span> категории </span> <br> услуг
+                        Наши <span> услуги </span>
                     </h2>
                 </div>
             </div>
@@ -125,11 +125,11 @@
                                     <h5>О нас</h5>
                                 </div>
                                 <h2 class="">
-                                    Встречаться с <span> Дом </span> <br> объявлений. 
+                                    <span>{{ about.title }} </span>
                                 </h2>
                             </div>
                             <div class="text mb-30">
-                                Сохраняйте концентрацию и продуктивность благодаря чистому и свободному от беспорядка пространству для заметок. Гибкие способы упорядочивания заметок: хэш-теги, вложенные блокноты, закрепление заметок.
+                                {{ about.description }}
                             </div>
                             <ul>
                                 <li class="d-flex mb-20"> 
@@ -145,8 +145,8 @@
                     </div>
                     <div class="col-lg-7">
                         <div class="img">
-                            <img src="{% static 'assets/img/about/about7.jpg' %}" alt="" class="main-img">
-                            <img src="{% static 'assets/img/about/about7_chart.png' %}" alt="" class="img-chart slide_up_down">
+                            <img src="{{ about.image.url }}" alt="" class="main-img">
+                            <img src="{% static 'assets/img/about/about_s4_bubble.png' %}" alt="" class="img-chart slide_up_down">
                             <span class="circle scale_up_down"></span>
                         </div>
                     </div>
@@ -164,11 +164,11 @@
                 <div class="section-head text-center style-4 mb-50">
                     <div class="top-title mb-10">
                         <img src="{% static 'assets/img/line_l.png' %}" alt="">
-                        <h5> Services </h5>
+                        <h5> {{ setting.title }} </h5>
                         <img src="{% static 'assets/img/line_r.png' %}" alt="">
                     </div>
                     <h2 class="">
-                        What We <span> Provide </span> <br> As A Company 
+                        Что мы <span> предоставляем </span> <br> нашим клиентам
                     </h2>
                 </div>
                 <div class="services-content pb-100">
@@ -182,9 +182,8 @@
                                     </span>
                                 </div>
                                 <div class="info">
-                                    <h6> Networking Solution </h6>
-                                    <p class="text"> Convoy with popular belief is a not rendom idea. </p>
-                                    <a href="#"> <i class="fal fa-long-arrow-right"></i> Read More  <i class="fal fa-long-arrow-right"></i> </a>
+                                    <h6> Сетевое решение </h6>
+                                    <p class="text"> Конвой с народным поверьем - не случайная идея. </p>
                                 </div>
                             </div>
                         </div>
@@ -197,9 +196,8 @@
                                     </span>
                                 </div>
                                 <div class="info">
-                                    <h6> Business Solution </h6>
-                                    <p class="text"> Convoy with popular belief is a not rendom idea. </p>
-                                    <a href="#"> <i class="fal fa-long-arrow-right"></i> Read More  <i class="fal fa-long-arrow-right"></i> </a>
+                                    <h6> Бизнес-решение </h6>
+                                    <p class="text"> Конвой с народным поверьем - идея не случайная. </p>
                                 </div>
                             </div>
                         </div>
@@ -212,9 +210,8 @@
                                     </span>
                                 </div>
                                 <div class="info">
-                                    <h6> Group Tasking </h6>
-                                    <p class="text"> Convoy with popular belief is a not rendom idea. </p>
-                                    <a href="#"> <i class="fal fa-long-arrow-right"></i> Read More  <i class="fal fa-long-arrow-right"></i> </a>
+                                    <h6> Групповые задачи </h6>
+                                    <p class="text"> Конвой с народным поверьем - идея не случайная. </p>
                                 </div>
                             </div>
                         </div>
@@ -227,8 +224,8 @@
                                     </span>
                                 </div>
                                 <div class="info">
-                                    <h6> Financial Service </h6>
-                                    <p class="text"> Convoy with popular belief is a not rendom idea. </p>
+                                    <h6> Финансовая служба </h6>
+                                    <p class="text"> Конвой с народным поверьем - идея не случайная. </p>
                                     <a href="#"> <i class="fal fa-long-arrow-right"></i> Read More  <i class="fal fa-long-arrow-right"></i> </a>
                                 </div>
                             </div>
@@ -247,10 +244,10 @@
                         <div class="section-head style-4 mb-50">
                             <div class="top-title mb-10">
                                 <img src="{% static 'assets/img/line_l.png' %}" alt="">
-                                <h5> Case Study </h5>
+                                <h5> {{ setting.title }} </h5>
                             </div>
                             <h2 class="">
-                                Creative <span> Works </span> <br> We Done 
+                                Наши <span> проекты </span>
                             </h2>
                         </div>
                         <div class="projects-tabs">
@@ -406,11 +403,11 @@
                 <div class="section-head text-center style-4 mb-80">
                     <div class="top-title mb-10">
                         <img src="{% static 'assets/img/line_l.png' %}" alt="">
-                        <h5> Feedbacks </h5>
+                        <h5> {{ setting.title }} отзывы </h5>
                         <img src="{% static 'assets/img/line_r.png' %}" alt="">
                     </div>
                     <h2 class="">
-                        1M+ Happy <span> Users Around </span> <br> From Worlds 
+                        10 отзывов <span> о </span> <br> {{ setting.title }} 
                     </h2>
                 </div>
                 <div class="testimonials-slider7 position-relative overflow-hidden">
@@ -459,28 +456,6 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="get-qoute-banner">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <div class="info">
-                                <p> Anytime you can make request to us </p>
-                                <h6> Everything You Need To Manage Business </h6>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6 d-none d-lg-block">
-                            <div class="img">
-                                <img src="assets/img/testimonials/banner7.png" alt="">
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="btns text-lg-end">
-                                <a href="#0" class="btn btn-icon-circle rounded-pill bg-blue7 fw-bold text-white">
-                                    <small> Get A Quote <i class="fas fa-long-arrow-alt-right"></i> </small>
-                                </a>
                             </div>
                         </div>
                     </div>

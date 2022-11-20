@@ -12,10 +12,10 @@
         <div class="pages_links">
             <ul>
                 <li><a href="{% url 'index' %}" class="active">Домой</a></li>
-                <li><a href="#">О нас</a></li>
                 <li><a href="#{% url 'portfolio_index' %}">Портфолио</a></li>
                 <li><a href="#{% url 'services_index' %}">Услуги</a></li>
-                <li><a href="#">Команда</a></li>
+                <!-- <li><a href="#">Команда</a></li> -->
+                <li><a href="{% url 'about_us' %}">О нас</a></li>
                 <li><a href="#">Связаться</a></li>
             </ul>
         </div>
@@ -53,7 +53,7 @@
             </div>
             <div class="col-5">
                 <div class="side_links d-flex justify-content-lg-end">
-                    <a href="#" class="me-4"> О нас </a>
+                    <a href="{% url 'about_us' %}" class="me-4"> О нас </a>
                     <a href="#" class="me-4"> FAQ </a>
                     <div class="dropdown border-1 border-start ps-4">
                         <a class="dropdown-toggle fw-bold" href="#" id="navbarDropdown1" role="button"
@@ -102,9 +102,14 @@
                         Услуги
                     </a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="page-blog-app.html">
                         Команда
+                    </a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about_us' %}">
+                        О нас
                     </a>
                 </li>
                 <li class="nav-item">

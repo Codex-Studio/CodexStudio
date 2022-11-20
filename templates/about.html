@@ -1,141 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <!-- Metas -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="keywords" content="HTML5 Template Iteck Multi-Purpose themeforest" />
-    <meta name="description" content="Iteck - Multi-Purpose HTML5 Template" />
-    <meta name="author" content="" />
-
-    <!-- Title  -->
-    <title>Iteck</title>
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/img/fav.png" title="Favicon" sizes="16x16" />
-
-    <!-- ====== bootstrap icons cdn ====== -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-
-    <!-- bootstrap 5 -->
-    <link rel="stylesheet" href="assets/css/lib/bootstrap.min.css">
-
-    <!-- ====== font family ====== -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="assets/css/lib/all.min.css" />
-    <link rel="stylesheet" href="assets/css/lib/animate.css" />
-    <link rel="stylesheet" href="assets/css/lib/jquery.fancybox.css" />
-    <link rel="stylesheet" href="assets/css/lib/lity.css" />
-    <link rel="stylesheet" href="assets/css/lib/swiper.min.css" />
-
-    <!-- ====== global style ====== -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-</head>
-
-<body>
-
-    <!-- ====== start loading page ====== -->
-    <div id="preloader">
-    </div>
-    <!-- ====== end loading page ====== -->
-
-    <!-- ====== start top navbar ====== -->
-    <div class="top-navbar style-5">
-        <div class="container">
-            <div class="content text-white">
-                <span class="btn sm-butn bg-white py-0 px-2 me-2 fs-10px">
-                    <small class="fs-10px">Special</small>
-                </span>
-                <img src="assets/img/icons/nav_icon/imoj_heart.png" alt="" class="icon-15">
-                <span class="fs-10px op-6">Get </span>
-                <small class="op-10 fs-10px">20% Discount</small>
-                <span class="fs-10px op-6">Get for New Account</span>
-                <a href="#" class="fs-10px text-decoration-underline ms-2">Register Now</a>
-            </div>
-        </div>
-    </div>
-    <!-- ====== end top navbar ====== -->
+{% extends 'homepage.html' %}
+{% load static %}
+{% block content %}
 
     <!-- ====== start navbar ====== -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-transparent style-5">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="assets/img/logo_home5.png" alt="">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown1" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Homes
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                            <li><a class="dropdown-item" href="home-it-solutions2.html"> It Solution creative </a></li>
-                            <li><a class="dropdown-item" href="home-app-landing.html"> App Landing </a></li>
-                            <li><a class="dropdown-item" href="home-saas-technology.html"> Saas Technology </a></li>
-                            <li><a class="dropdown-item" href="home-marketing-startup.html"> Marketing Startup </a></li>
-                            <li><a class="dropdown-item" href="home-it-solutions.html"> It Solution </a></li>
-                            <li><a class="dropdown-item" href="home-software-company.html"> Software Company </a></li>
-                            <li><a class="dropdown-item" href="home-digital-agency.html"> Digital Agency </a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            pages
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                            <li><a class="dropdown-item" href="page-about-5.html">about</a></li>
-                            <li><a class="dropdown-item" href="page-product-5.html">product</a></li>
-                            <li><a class="dropdown-item" href="page-services-5.html">services</a></li>
-                            <li><a class="dropdown-item" href="page-shop-5.html">shop</a></li>
-                            <li><a class="dropdown-item" href="page-single-project-5.html">single project</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="page-portfolio-5.html">
-                            portfolio
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="page-blog-5.html">
-                            blog
-                            <small
-                                class="fs-10px icon-20 rounded-pill bg-blue5 text-white fw-bold px-3 ms-2 d-inline-flex justify-content-center align-items-center">3</small>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="page-contact-5.html">
-                            contact us
-                        </a>
-                    </li>
-
-                </ul>
-                <div class="nav-side">
-                    <div class="d-flex align-items-center">
-                        <span class="nav-item">
-                            <a class="nav-link" href="page-contact-5.html">
-                                <i class="bi bi-person fs-5 me-2"></i>
-                                sign in
-                            </a>
-                        </span>
-                        <a href="page-contact-5.html" class="btn rounded-pill blue5-3Dbutn hover-blue2 sm-butn fw-bold">
-                            <span>Start Free Trial <i class="bi bi-arrow-right ms-1"></i> </span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+    {% include 'include/header.html' %}
     <!-- ====== end navbar ====== -->
 
     <!-- ====== start inner-header style-5 ====== -->
@@ -143,11 +11,11 @@
         <div class="container">
             <div class="content">
                 <div class="links">
-                    <a href="#"> Home </a>
-                    <a href="#"> About Us </a>
+                    <a href="{% url 'index' %}"> Домой </a>
+                    <a href="{% url 'about_us' %}"> О нас </a>
                 </div>
-                <h2> About Our Company </h2>
-                <img src="assets/img/header/head7_rock.png" alt="" class="side-img slide_up_down">
+                <h2> О нашей студии </h2>
+                <img src="{% static 'assets/img/header/head7_rock.png' %}" alt="" class="side-img slide_up_down">
             </div>
         </div>
     </section>
@@ -162,43 +30,43 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="img img-cover">
-                            <img src="assets/img/about/about2.png" alt="">
+                            <img src="{{ about.image.url }}" alt="">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="info px-lg-5">
                             <div class="section-head style-5 mb-40">
-                                <h2 class="mb-20"> Work For Your <span> Incredible Success </span> </h2>
+                                <h2 class="mb-20"> {{ about.title }}</h2>
                             </div>
                             <ul class="nav nav-pills" id="pills-tab" role="tablist">
                                 <li class="nav-item" role="presentation">
                                   <button class="nav-link active" id="abt1-tab" data-bs-toggle="pill" data-bs-target="#abt1" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
-                                        Our Mission
+                                        О нас
                                   </button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                   <button class="nav-link" id="abt2-tab" data-bs-toggle="pill" data-bs-target="#abt2" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
-                                        Our vision
+                                        Наша миссия
                                   </button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="abt3-tab" data-bs-toggle="pill" data-bs-target="#abt1" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
-                                            Our Goal
+                                            Наш девиз
                                     </button>
                                 </li>
                             </ul>
                             <div class="tab-content" id="pills-tabContent">
                                 <div class="tab-pane fade show active" id="abt1" role="tabpanel">
-                                    <p class="text"> The uploading and updating processes made by suppliers can be streamlined through front-end dashboards that create better ease of access. </p>
+                                    <p class="text"> {{ about.description }}. </p>
                                     <div class="d-flex align-items-center mt-40">
                                         <div class="btns">
-                                            <a href="#" class="btn rounded-pill blue5-3Dbutn hover-blue2 sm-butn fw-bold">
-                                                <span> Learn More </span>
+                                            <a href="{% url 'contact' %}" class="btn rounded-pill blue5-3Dbutn hover-blue2 sm-butn fw-bold">
+                                                <span> Связаться </span>
                                             </a>
                                         </div>
                                         <div class="inf ms-3">
-                                            <p class="color-999"> Support Email </p>
-                                            <a href="#" class="fw-bold color-000"> info@webmail.com </a>
+                                            <p class="color-999"> Электронная почта поддержки </p>
+                                            <a href="mailto: {{ setting.email }}" class="fw-bold color-000"> {{ setting.email }} </a>
                                         </div>
                                     </div>
                                 </div>
@@ -206,13 +74,13 @@
                                     <p class="text"> The uploading and updating processes made by suppliers can be streamlined through front-end dashboards that create better ease of access. </p>
                                     <div class="d-flex align-items-center mt-40">
                                         <div class="btns">
-                                            <a href="#" class="btn rounded-pill blue5-3Dbutn hover-blue2 sm-butn fw-bold">
-                                                <span> Learn More </span>
+                                            <a href="{% url 'contact' %}" class="btn rounded-pill blue5-3Dbutn hover-blue2 sm-butn fw-bold">
+                                                <span> Связаться </span>
                                             </a>
                                         </div>
                                         <div class="inf ms-3">
-                                            <p class="color-999"> Support Email </p>
-                                            <a href="#" class="fw-bold color-000"> info@webmail.com </a>
+                                            <p class="color-999"> Электронная почта поддержки </p>
+                                            <a href="mailto: {{ setting.email }}" class="fw-bold color-000"> {{ setting.email }} </a>
                                         </div>
                                     </div>
                                 </div>
@@ -221,8 +89,8 @@
                     </div>
                 </div>
             </div>
-            <img src="assets/img/about/about2_pattern_l.png" alt="" class="pattern_l">
-            <img src="assets/img/about/about2_pattern_r.png" alt="" class="pattern_r">
+            <img src="{% static 'assets/img/about/about2_pattern_l.png' %}" alt="" class="pattern_l">
+            <img src="{% static 'assets/img/about/about2_pattern_r.png' %}" alt="" class="pattern_r">
         </section>
         <!-- ====== end careers-features ====== -->
 
@@ -231,20 +99,20 @@
         <section class="timeline section-padding bg-gray5">
             <div class="container">
                 <div class="section-head text-center mb-70 style-5">
-                    <h2 class="mb-20"> Journey Was <span> Started </span> </h2>
-                    <p>More than 15,000 companies trust and choose Itech</p>
+                    <h2 class="mb-20"> О нашей <span> развитии </span> </h2>
+                    <p>Сделали более чем {{ portfolio.all.count }} проектов</p>
                 </div>
                 <div class="timeline-content">
                     <div class="timeline-card">
                         <div class="row justify-content-around align-items-center">
                             <div class="col-lg-4">
                                 <div class="card-year text-lg-end wow left_to_right_apperance ">
-                                    <h3> 2000 </h3>
+                                    <h3> 2021 август </h3>
                                 </div> 
                             </div>
                             <div class="col-lg-4">
                                 <div class="card-info wow left_to_right_apperance ">
-                                    <h6> Built New Team </h6>
+                                    <h6> Создание CodeX </h6>
                                     <p> Sass which stands for 'Syntactically awesome style sheet is an extension of that enables you to use things like variables. </p>
                                     <span class="num"> 01 </span>
                                 </div> 
@@ -256,14 +124,14 @@
                         <div class="row justify-content-around align-items-center">
                             <div class="col-lg-4">
                                 <div class="card-info wow left_to_right_apperance">
-                                    <h6> Got Design Rewards </h6>
+                                    <h6> Первый заказ </h6>
                                     <p> Sass which stands for 'Syntactically awesome style sheet is an extension of that enables you to use things like variables. </p>
                                     <span class="num"> 02 </span>
                                 </div> 
                             </div>
                             <div class="col-lg-4">
                                 <div class="card-year wow left_to_right_apperance ">
-                                    <h3> 2005 </h3>
+                                    <h3> 2021 сентрябрь </h3>
                                 </div> 
                             </div>
                         </div>
@@ -273,12 +141,12 @@
                         <div class="row justify-content-around align-items-center">
                             <div class="col-lg-4">
                                 <div class="card-year text-lg-end wow left_to_right_apperance ">
-                                    <h3> 2015 </h3>
+                                    <h3> 2021 декабрь </h3>
                                 </div> 
                             </div>
                             <div class="col-lg-4">
                                 <div class="card-info wow left_to_right_apperance ">
-                                    <h6> Best Team In Egypt </h6>
+                                    <h6> Первый интернет магазин </h6>
                                     <p> Sass which stands for 'Syntactically awesome style sheet is an extension of that enables you to use things like variables. </p>
                                     <span class="num"> 03 </span>
                                 </div> 
@@ -290,14 +158,14 @@
                         <div class="row justify-content-around align-items-center">
                             <div class="col-lg-4">
                                 <div class="card-info wow left_to_right_apperance ">
-                                    <h6> Design Rewards In NYC </h6>
+                                    <h6> Первый крупный заказ на 1900$  </h6>
                                     <p> Sass which stands for 'Syntactically awesome style sheet is an extension of that enables you to use things like variables. </p>
                                     <span class="num"> 04 </span>
                                 </div> 
                             </div>
                             <div class="col-lg-4">
                                 <div class="card-year wow left_to_right_apperance ">
-                                    <h3> 2018 </h3>
+                                    <h3> 2022 февраль </h3>
                                 </div> 
                             </div>
                         </div>
@@ -307,12 +175,12 @@
                         <div class="row justify-content-around align-items-center">
                             <div class="col-lg-4">
                                 <div class="card-year text-lg-end wow left_to_right_apperance ">
-                                    <h3> 2022 </h3>
+                                    <h3> 2022 ноябрь </h3>
                                 </div> 
                             </div>
                             <div class="col-lg-4">
                                 <div class="card-info wow left_to_right_apperance ">
-                                    <h6> Featured On Envato </h6>
+                                    <h6> Выход в торговую прощадку </h6>
                                     <p> Sass which stands for 'Syntactically awesome style sheet is an extension of that enables you to use things like variables. </p>
                                     <span class="num"> 05 </span>
                                 </div> 
@@ -330,55 +198,33 @@
         <section class="clients-imgs pt-100">
             <div class="container">
                 <div class="section-head text-center mb-70 style-5">
-                    <h2 class="mb-20"> Trusted By Thousands <span> Business </span> </h2>
+                    <h2 class="mb-20"> Наши <span> партнеры </span> </h2>
                 </div>
                 <div class="clients-content">
+                    {% for part in partners %}
                     <a href="#" class="client-logo">
-                        <img src="assets/img/logos/2.png" alt="">
+                        <img src="{{ part.image.url }}" alt="">
                     </a>
-                    <a href="#" class="client-logo">
-                        <img src="assets/img/logos/7.png" alt="">
-                    </a>
-                    <a href="#" class="client-logo">
-                        <img src="assets/img/logos/11.png" alt="">
-                    </a>
-                    <a href="#" class="client-logo">
-                        <img src="assets/img/logos/12.png" alt="">
-                    </a>
-                    <a href="#" class="client-logo">
-                        <img src="assets/img/logos/15.png" alt="">
-                    </a>
-                    <a href="#" class="client-logo">
-                        <img src="assets/img/logos/16.png" alt="">
-                    </a>
-                    <a href="#" class="client-logo">
-                        <img src="assets/img/logos/18.png" alt="">
-                    </a>
-                    <a href="#" class="client-logo">
-                        <img src="assets/img/logos/3.png" alt="">
-                    </a>
-                    <a href="#" class="client-logo">
-                        <img src="assets/img/logos/5.png" alt="">
-                    </a>
+                    {% endfor %}
                 </div>
-                <h5 class="text-center mt-50"> More <span class="color-blue5"> 15,000 </span> Companies & partners trusted & choice Itekseo </h5>
+                <h5 class="text-center mt-50"> Более чем <span class="color-blue5"> {{ partners.all.count }} </span> компании сотрудничают с нами </h5>
             </div>
             <div class="about2-imgs-slider pt-100">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <a href="#" class="img img-cover">
-                                <img src="assets/img/about/about2_1.png" alt="">
+                                <img src="{% static 'assets/img/about/about2_1.png' %}" alt="">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="#" class="img img-cover">
-                                <img src="assets/img/about/about2_2.png" alt="">
+                                <img src="{% static 'assets/img/about/about2_2.png' %}" alt="">
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="#" class="img img-cover">
-                                <img src="assets/img/about/about2_3.png" alt="">
+                                <img src="{% static 'assets/img/about/about2_3.png' %}" alt="">
                             </a>
                         </div>
                     </div>
@@ -392,8 +238,8 @@
             <div class="container">
                 <div class="content section-padding">
                     <div class="section-head text-center mb-70 style-5">
-                        <h2 class="mb-20"> News & <span> Insights </span> </h2>
-                        <p>More than 15,000 companies trust and choose Itech</p>
+                        <h2 class="mb-20"> Новости & <span> Инсайты </span> </h2>
+                        <p>Новости о {{ setting.title }} и инсайты</p>
                     </div>
                     <div class="blog-content">
                         <div class="row">
@@ -619,20 +465,6 @@
     </a>
     <!-- ====== end to top button ====== -->
 
-    <!-- ====== request ====== -->
-    <script src="assets/js/lib/jquery-3.0.0.min.js"></script>
-    <script src="assets/js/lib/jquery-migrate-3.0.0.min.js"></script>
-    <script src="assets/js/lib/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/lib/wow.min.js"></script>
-    <script src="assets/js/lib/jquery.fancybox.js"></script>
-    <script src="assets/js/lib/lity.js"></script>
-    <script src="assets/js/lib/swiper.min.js"></script>
-    <script src="assets/js/lib/jquery.waypoints.min.js"></script>
-    <script src="assets/js/lib/jquery.counterup.js"></script>
-    <script src="assets/js/lib/pace.js"></script>
-    <script src="assets/js/lib/scrollIt.min.js"></script>
-    <script src="assets/js/main.js"></script>
-
     <script>
         $('.upload_input').on('change', function(event) {
             var files = event.target.files;
@@ -644,6 +476,4 @@
         });
     </script>
 
-</body>
-
-</html>
+{% endblock %}
