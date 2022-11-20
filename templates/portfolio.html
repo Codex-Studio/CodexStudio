@@ -2,11 +2,6 @@
 {% load static %}
 {% block content %}
 
-    <!-- ====== start loading page ====== -->
-    <div id="preloader">
-    </div>
-    <!-- ====== end loading page ====== -->
-
     <!-- ====== start top navbar ====== -->
     {% include 'include/header.html' %}
     <!-- ====== end navbar ====== -->
@@ -33,7 +28,7 @@
                                     </div>
                                     <div class="info">
                                         <h5>
-                                            <a href="page-single-project-5.html"> {{ port.title }} </a> 
+                                            <a href="{% url 'portfolio_detail' port.id %}"> {{ port.title }} </a> 
                                         </h5>
                                         <small class="d-block color-main text-uppercase">{{ port.portfolio_type }}</small>
                                         <div class="text">

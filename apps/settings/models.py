@@ -57,6 +57,14 @@ class Portfolio(models.Model):
         quality=100, 
         upload_to='project_images/',
         verbose_name="Фотография проекта")
+    url = models.URLField(
+        verbose_name="Ссылка на проект"
+    )
+    price = models.PositiveIntegerField(
+        verbose_name="Цена проекта",
+        default=0,
+        blank = True, null = True
+    )
     project_type = models.ForeignKey(
         ProjectType,
         on_delete=models.SET_NULL,
