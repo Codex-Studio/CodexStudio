@@ -20,3 +20,12 @@ def portfolio_index(request):
         'portfolio' : portfolio,
     }
     return render(request, 'portfolio.html', context)
+
+def portfolio_detail(request, id):
+    setting = Setting.objects.latest('id')
+    portfolio = Portfolio.objects.get(id = id)
+    context = {
+        'setting' : setting,
+        'portfolio' : portfolio,
+    }
+    return render(request, 'portfolio_detail.html', context)
