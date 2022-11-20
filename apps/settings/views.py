@@ -1,11 +1,13 @@
 from django.shortcuts import render
-from apps.settings.models import Setting, Portfolio
+from apps.settings.models import Setting, Portfolio, Partners
 
 # Create your views here.
 def index(request):
     setting = Setting.objects.latest('id')
+    partners = Partners.objects.all().order_by('-id')
     context = {
-        'setting' : setting
+        'setting' : setting,
+        'partners' : partners,
     }
     return render(request, 'index.html', context)
 

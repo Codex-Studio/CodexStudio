@@ -3,8 +3,8 @@
 {% block content %}
 
     <!-- ====== start loading page ====== -->
-     <div id="preloader">
-    </div>
+     <!-- <div id="preloader">
+    </div> -->
     <!-- ====== end loading page ====== -->
 
     <!-- ====== start sidemenu navbar ====== -->
@@ -23,11 +23,11 @@
                                 </div>
                             </div>
                             <h1>
-                                Выберите <br> <span class="num"> #01 </span> <span class="text-grad"> IT решения </span> <br> для вашего бизнеса.
+                                <span class="text-grad" style="font-size: 40px;"> {{ setting.description }} </span>
                             </h1>
                             <div class="d-flex flex-wrap">
                                 <a href="#0" class="btn btn-icon-circle rounded-pill bg-blue7 fw-bold text-white me-4" target="_blank">
-                                    <small> Начать сейчас <i class="fas fa-long-arrow-alt-right"></i> </small>
+                                    <small> Оставить заявку <i class="fas fa-long-arrow-alt-right"></i> </small>
                                 </a>
                                 <div class="inf mt-3 mt-lg-0">
                                     <p class="color-999"> Электронная почта поддержки </p>
@@ -38,8 +38,8 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="img mt-4 mt-lg-0">
-                            <img src="{% static 'assets/img/header/head_img7.png' %}" alt="">
-                            <img src="{% static 'assets/img/header/head7_rock.png' %}" alt="" class="rock7 slide_up_down">
+                            <img src="{% static 'assets/img/comming_man_shape.png' %}" alt="" class="slide_up_down">
+                            <!-- <img src="{% static 'assets/img/header/head7_rock.png' %}" alt="" class="rock7 slide_up_down"> -->
                         </div>
                     </div>
                     <div class="col-12">
@@ -48,18 +48,11 @@
                                 Наши <br> <span class="fw-bold"> Партнеры </span>
                             </div>
                             <div class="sponsers-content">
-                                <a href="#">
-                                    <img src="{% static 'assets/img/logos/18.png' %}" alt="">
+                                {% for partner in partners %}
+                                <a href="{{ partner.url }}">
+                                    <img src="{{ partner.image.url }}" width="100px" alt="">
                                 </a>
-                                <a href="#">
-                                    <img src="{% static 'assets/img/logos/19.png' %}" alt="">
-                                </a>
-                                <a href="#">
-                                    <img src="{% static 'assets/img/logos/20.png' %}" alt="">
-                                </a>
-                                <a href="#">
-                                    <img src="{% static 'assets/img/logos/21.png' %}" alt="">
-                                </a>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
