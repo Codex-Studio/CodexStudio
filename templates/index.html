@@ -45,7 +45,7 @@
                     <div class="col-12">
                         <div class="sponsers mt-30">
                             <div class="title me-5 flex-shrink-0">
-                                Наши <br> <span class="fw-bold"> Партнеры </span>
+                                Наши <br> <span class="fw-bold"> Партнеры: </span>
                             </div>
                             <div class="sponsers-content">
                                 {% for partner in partners %}
@@ -76,7 +76,7 @@
                         <img src="{% static 'assets/img/line_r.png' %}" alt="">
                     </div>
                     <h2 class="">
-                        Создан с лучшим <span> Функции </span> <br> и хороший UX
+                        Наши <span> категории </span> <br> услуг
                     </h2>
                 </div>
             </div>
@@ -84,55 +84,24 @@
                 <div class="features-slider7">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
+                            {% for service in services %}
                             <div class="swiper-slide">
                                 <a href="#" class="features-card style-7">
                                     <div class="icon">
-                                        <img src="{% static 'assets/img/icons/fe1.png' %}" alt="">
+                                        <img src="{{ service.icon.url }}" alt="">
                                     </div>
                                     <div class="info">
-                                        <p class="color-999"> Features 01 </p>
-                                        <h5> Powerful Security <br> System Built </h5>
+                                        <p class="color-999"> От {{ service.price }}$ </p>
+                                        <h5>{{ service.title }} </h5>
                                     </div>
                                 </a>
                             </div>
-                            <div class="swiper-slide">
-                                <a href="#" class="features-card style-7">
-                                    <div class="icon">
-                                        <img src="{% static 'assets/img/icons/fe2.png' %}" alt="">
-                                    </div>
-                                    <div class="info">
-                                        <p class="color-999"> Features 02 </p>
-                                        <h5> Easy Search Engine <br> Optimize </h5>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="#" class="features-card style-7">
-                                    <div class="icon">
-                                        <img src="{% static 'assets/img/icons/fe3.png' %}" alt="">
-                                    </div>
-                                    <div class="info">
-                                        <p class="color-999"> Features 03 </p>
-                                        <h5> Uncommon Layout <br> & Creative </h5>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="#" class="features-card style-7">
-                                    <div class="icon">
-                                        <img src="{% static 'assets/img/icons/fe4.png' %}" alt="">
-                                    </div>
-                                    <div class="info">
-                                        <p class="color-999"> Features 04 </p>
-                                        <h5> Save Time & Big <br> Data </h5>
-                                    </div>
-                                </a>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
                 <div class="btns text-center mt-10">
-                    <a href="#0" class="btn btn-icon-circle rounded-pill bg-blue7 fw-bold text-white me-4 mb-4 mb-lg-0">
+                    <a href="{% url 'services_index' %}" class="btn btn-icon-circle rounded-pill bg-blue7 fw-bold text-white me-4 mb-4 mb-lg-0">
                         <small> Узнать больше <i class="fas fa-long-arrow-alt-right"></i> </small>
                     </a>
                     <a href="#0" class="btn btn-icon-circle rounded-pill bg-white fw-bold me-4">
