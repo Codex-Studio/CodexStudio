@@ -1,0 +1,140 @@
+{% load static %}
+<div class="side_menu style-7" id="side_menu">
+    <a href="#0" class="side_menu_cls">
+        <img src="{% static 'assets/img/icons/4dots.png' %}" alt="">
+    </a>
+    <div class="content">
+        <div class="logo">
+            <a href="{% url 'index' %}" class="w-100">
+                <img src="{% static 'assets/img/logo_lgr.png' %}" alt="">
+            </a>
+        </div>
+        <div class="pages_links">
+            <ul>
+                <li><a href="{% url 'index' %}" class="active">Домой</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#{% url 'portfolio_index' %}">Портфолио</a></li>
+                <li><a href="#">Команда</a></li>
+                <li><a href="#">Связаться</a></li>
+            </ul>
+        </div>
+        <div class="side_foot">
+            <h5> Наши контакты </h5>
+            <div class="row">
+                <div class="col-lg-6">
+                    <a href="#"> <i class="fal fa-phone-alt me-2"></i>{{ setting.phone }}</a>
+                </div>
+                <div class="col-lg-6">
+                    <a href="#"> <i class="fal fa-envelope me-2 mt-4 mt-lg-0"></i> {{ setting.email }} </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="side_overlay"></div>
+<!-- ====== end sidemenu navbar ====== -->
+
+<!-- ====== start top navbar ====== -->
+<div class="top-navbar style-7">
+    <div class="container">
+        <div class="row justify-content-between gx-0">
+            <div class="col-7">
+                <div class="top_info">
+                    <a href="mailto: {{ setting.email }}" class="me-4"> 
+                        <i class="fas fa-envelope-open me-1 color-blue7"></i>
+                        <span>{{ setting.email }}</span>    
+                    </a>
+                    <a href="tel: {{ setting.phone }}"> 
+                        <i class="fas fa-phone me-1 color-blue7"></i>
+                        <span>{{ setting.phone }}</span>    
+                    </a>
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="side_links d-flex justify-content-lg-end">
+                    <a href="#" class="me-4"> О нас </a>
+                    <a href="#" class="me-4"> FAQ </a>
+                    <div class="dropdown border-1 border-start ps-4">
+                        <a class="dropdown-toggle fw-bold" href="#" id="navbarDropdown1" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            RU
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                            <li><a class="dropdown-item" href="#0"> KG </a></li>
+                            <li><a class="dropdown-item" href="#0"> US </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ====== end top navbar ====== -->
+
+<!-- ====== start navbar ====== -->
+<nav class="navbar navbar-expand-lg navbar-light style-7">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <img src="{{ setting.logo.url }}" width="60%" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ps-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link active" href="{% url 'index' %}" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Домой
+                    </a>
+                   
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Страницы
+                        <!-- <small class="hot alert-danger text-danger">hot</small> -->
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                        <li><a class="dropdown-item" href="page-about-app.html">about</a></li>
+                        <li><a class="dropdown-item" href="page-product-app.html">product</a></li>
+                        <li><a class="dropdown-item" href="page-services-app.html">services</a></li>
+                        <li><a class="dropdown-item" href="page-shop-app.html">shop</a></li>
+                        <li><a class="dropdown-item" href="page-single-project-app.html">single project</a></li>
+                        <li><a class="dropdown-item" href="page-single-post-app.html">single post</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'portfolio_index' %}">
+                        Портфолио
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="page-blog-app.html">
+                        Команда
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="page-contact-app.html">
+                        <!-- <img src="assets/img/icons/nav_icon/price.png" alt="" class="icon-15 me-1"> -->
+                        Связаться
+                    </a>
+                </li>
+            </ul>
+            <div class="nav-side">
+                <div class="d-flex align-items-center">
+                    <a href="#" class="me-4">
+                        <img src="{% static 'assets/img/icons/user.png' %}" alt="">
+                    </a>
+                    <a href="#0" class="side_menu_btn">
+                        <img src="{% static 'assets/img/icons/4dots.png' %}" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- ====== end navbar ====== -->
+
