@@ -1,5 +1,5 @@
 from django.contrib import admin
-from apps.settings.models import Setting, ProjectType, Portfolio, Partners, Service, AboutUs, Benefits, Review, News
+from apps.settings.models import Setting, ProjectType, Portfolio, Partners, Service, AboutUs, Benefits, Review, News, Contact
 
 # Register your models here.
 admin.site.register(Setting)
@@ -11,3 +11,4 @@ admin.site.register(AboutUs)
 admin.site.register(Benefits)
 admin.site.register(Review)
 admin.site.register(News)
+admin.site.register(Contact)
