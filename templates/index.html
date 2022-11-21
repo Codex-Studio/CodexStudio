@@ -26,8 +26,8 @@
                                 <span class="text-grad" style="font-size: 40px;"> {{ setting.description }} </span>
                             </h1>
                             <div class="d-flex flex-wrap">
-                                <a href="#0" class="btn btn-icon-circle rounded-pill bg-blue7 fw-bold text-white me-4" target="_blank">
-                                    <small> Оставить заявку <i class="fas fa-long-arrow-alt-right"></i> </small>
+                                <a href="{% url 'contact' %}" class="btn btn-icon-circle rounded-pill bg-blue7 fw-bold text-white me-4" target="_blank">
+                                    <small> Связаться с {{ setting.title }} <i class="fas fa-long-arrow-alt-right"></i> </small>
                                 </a>
                                 <div class="inf mt-3 mt-lg-0">
                                     <p class="color-999"> Электронная почта поддержки </p>
@@ -104,8 +104,8 @@
                     <a href="{% url 'services_index' %}" class="btn btn-icon-circle rounded-pill bg-blue7 fw-bold text-white me-4 mb-4 mb-lg-0">
                         <small> Узнать больше <i class="fas fa-long-arrow-alt-right"></i> </small>
                     </a>
-                    <a href="#0" class="btn btn-icon-circle rounded-pill bg-white fw-bold me-4">
-                        <small> Связаться <i class="fas fa-long-arrow-alt-right bg-light"></i> </small>
+                    <a href="{% url 'contact' %}" class="btn btn-icon-circle rounded-pill bg-white fw-bold me-4">
+                        <small> Связаться с нами <i class="fas fa-long-arrow-alt-right bg-light"></i> </small>
                     </a>
                 </div>
             </div>
@@ -236,166 +236,7 @@
         </section>
         <!-- ====== end services ====== -->
 
-        <!-- ====== start projects  ====== -->
-        <section class="projects style-7 section-padding">
-            <div class="content">
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="section-head style-4 mb-50">
-                            <div class="top-title mb-10">
-                                <img src="{% static 'assets/img/line_l.png' %}" alt="">
-                                <h5> {{ setting.title }} </h5>
-                            </div>
-                            <h2 class="">
-                                Наши <span> проекты </span>
-                            </h2>
-                        </div>
-                        <div class="projects-tabs">
-                            <ul class="nav nav-pills flex-column mb-3" id="pills-tab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                  <button class="nav-link active" id="pills-proj1-tab" data-bs-toggle="pill" data-bs-target="#pills-proj1" type="button" role="tab" aria-controls="pills-proj1" aria-selected="true">
-                                       <i class="fal fa-long-arrow-right me-2 color-blue7"></i> Website Design 
-                                  </button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                  <button class="nav-link" id="pills-proj2-tab" data-bs-toggle="pill" data-bs-target="#pills-proj2" type="button" role="tab" aria-controls="pills-proj2" aria-selected="false">
-                                    <i class="fal fa-long-arrow-right me-2 color-blue7"></i> UI UX Design
-                                  </button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="pills-proj3-tab" data-bs-toggle="pill" data-bs-target="#pills-proj1" type="button" role="tab" aria-controls="pills-proj3" aria-selected="false">
-                                        <i class="fal fa-long-arrow-right me-2 color-blue7"></i> Branding Design
-                                    </button>
-                                </li>
-                                  <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="pills-proj4-tab" data-bs-toggle="pill" data-bs-target="#pills-proj2" type="button" role="tab" aria-controls="pills-proj4" aria-selected="false">
-                                        <i class="fal fa-long-arrow-right me-2 color-blue7"></i> Game Design
-                                    </button>
-                                </li>
-                            </ul>
-                            <div class="swiper-button-next">
-                                <i class="far fa-long-arrow-right"></i>
-                            </div>
-                            <div class="swiper-button-prev">
-                                <i class="far fa-long-arrow-left"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-9">
-                        <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="pills-proj1" role="tabpanel" aria-labelledby="pills-proj1-tab">
-                                <div class="projects-slider7">
-                                    <div class="swiper-container">
-                                        <div class="swiper-wrapper">
-                                            <div class="swiper-slide">
-                                                <a href="#" class="project-card style-7">
-                                                    <div class="info">
-                                                        <h6> UI & UX, Website </h6>
-                                                        <h3> Protogus Website UIX Design </h3>
-                                                    </div>
-                                                    <div class="img">
-                                                        <img src="{% static 'assets/img/projects/8.png' %}" alt="">
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="swiper-slide">
-                                                <a href="#" class="project-card style-7">
-                                                    <div class="info">
-                                                        <h6> UI & UX, Website </h6>
-                                                        <h3> Protogus Website UIX Design </h3>
-                                                    </div>
-                                                    <div class="img">
-                                                        <img src="{% static 'assets/img/projects/9.png' %}" alt="">
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="swiper-slide">
-                                                <a href="#" class="project-card style-7">
-                                                    <div class="info">
-                                                        <h6> UI & UX, Website </h6>
-                                                        <h3> Protogus Website UIX Design </h3>
-                                                    </div>
-                                                    <div class="img">
-                                                        <img src="{% static 'assets/img/projects/8.png' %}" alt="">
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="swiper-slide">
-                                                <a href="#" class="project-card style-7">
-                                                    <div class="info">
-                                                        <h6> UI & UX, Website </h6>
-                                                        <h3> Protogus Website UIX Design </h3>
-                                                    </div>
-                                                    <div class="img">
-                                                        <img src="{% static 'assets/img/projects/9.png' %}" alt="">
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="pills-proj2" role="tabpanel" aria-labelledby="pills-proj2-tab">
-                                <div class="projects-slider7">
-                                    <div class="swiper-container">
-                                        <div class="swiper-wrapper">
-                                            <div class="swiper-slide">
-                                                <a href="#" class="project-card style-7">
-                                                    <div class="info">
-                                                        <h6> UI & UX, Website </h6>
-                                                        <h3> Protogus Website UIX Design </h3>
-                                                    </div>
-                                                    <div class="img">
-                                                        <img src="{% static 'assets/img/projects/9.png' %}" alt="">
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="swiper-slide">
-                                                <a href="#" class="project-card style-7">
-                                                    <div class="info">
-                                                        <h6> UI & UX, Website </h6>
-                                                        <h3> Protogus Website UIX Design </h3>
-                                                    </div>
-                                                    <div class="img">
-                                                        <img src="{% static 'assets/img/projects/8.png' %}" alt="">
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="swiper-slide">
-                                                <a href="#" class="project-card style-7">
-                                                    <div class="info">
-                                                        <h6> UI & UX, Website </h6>
-                                                        <h3> Protogus Website UIX Design </h3>
-                                                    </div>
-                                                    <div class="img">
-                                                        <img src="{% static 'assets/img/projects/9.png' %}" alt="">
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="swiper-slide">
-                                                <a href="#" class="project-card style-7">
-                                                    <div class="info">
-                                                        <h6> UI & UX, Website </h6>
-                                                        <h3> Protogus Website UIX Design </h3>
-                                                    </div>
-                                                    <div class="img">
-                                                        <img src="{% static 'assets/img/projects/8.png' %}" alt="">
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#0" class="btn btn-icon-circle rounded-pill bg-white fw-bold mt-50">
-                                <small> More Projects <i class="fas fa-long-arrow-alt-right bg-light"></i> </small>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- ====== end projects  ====== -->
+        
 
         <!-- ====== start testimonials ====== -->
         <section class="testimonials style-7 section-padding">
@@ -483,10 +324,10 @@
                             <div class="section-head style-4 mb-40">
                                 <div class="top-title mb-10">
                                     <img src="{% static 'assets/img/line_l.png' %}" alt="">
-                                    <h5> Why Choose Us </h5>
+                                    <h5> {{ setting.title }} </h5>
                                 </div>
                                 <h2 class="text-white">
-                                    Why Choose <span> Our Own </span> <br> IT Service? 
+                                    Почему <span> выбирают </span> <br> нас? 
                                 </h2>
                             </div>
                             <ul>
@@ -624,14 +465,14 @@
                     </div>
                     <div class="col-lg-5">
                         <div class="info">
-                            <p> Hire Us For Your Project </p>
-                            <h3> Lets Work Together </h3>
+                            <p> У нас есть телеграм бот, который работает 24/7 </p>
+                            <h3> Напиште нам в telegram </h3>
                             <div class="btns mt-50">
-                                <a href="#0" class="btn btn-icon-circle rounded-pill bg-black fw-bold text-white me-4 mb-3 mb-lg-0">
-                                    <small> Estimate Project <i class="fas fa-long-arrow-alt-right"></i> </small>
+                                <a href="https://t.me/Kurmanbek11" class="btn btn-icon-circle rounded-pill bg-black fw-bold text-white me-4 mb-3 mb-lg-0">
+                                    <small> Написать боту <i class="fas fa-long-arrow-alt-right"></i> </small>
                                 </a>
-                                <a href="#0" class="btn btn-icon-circle rounded-pill fw-bold brd-light text-white hover-blue7">
-                                    <small> Contact Us <i class="fas fa-long-arrow-alt-right bg-light"></i> </small>
+                                <a href="{% url 'portfolio_index' %}" class="btn btn-icon-circle rounded-pill fw-bold brd-light text-white hover-blue7">
+                                    <small> Посмотреть портфолио <i class="fas fa-long-arrow-alt-right bg-light"></i> </small>
                                 </a>
                             </div>
                         </div>
@@ -649,144 +490,7 @@
     <!--End-Contents-->
 
     <!-- ====== start footer ====== -->
-    <footer class="style-7">
-        <div class="container">
-            <div class="content section-padding">
-                <div class="row">
-                    <div class="col-lg-4 border-1 border-end brd-gray">
-                        <div class="info-logo">
-                            <a href="#" class="logo">
-                                <img src="{{ setting.logo.url }}" alt="">
-                            </a>
-                            <div class="text">
-                                {{ setting.description }}
-                            </div>
-                            <div class="social-links">
-                                <a href="#">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8">
-                        <div class="links-side">
-                            <div class="row gx-5">
-                                <div class="col-lg-6">
-                                    <div class="links-group">
-                                        <h5>Что мы делаем</h5>
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <ul class="links">
-                                                    <li> 
-                                                        <a href="#">Online Marketing</a>
-                                                    </li>
-                                                    <li> 
-                                                        <a href="#">Technology</a>
-                                                    </li>
-                                                    <li> 
-                                                        <a href="#">Business</a>
-                                                    </li>
-                                                    <li> 
-                                                        <a href="#">Content strategy</a>
-                                                    </li>
-                                                    <li> 
-                                                        <a href="#">Development</a>
-                                                    </li>
-                                                    <li> 
-                                                        <a href="#">Advertising Strategy</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <ul class="links">
-                                                    <li> 
-                                                        <a href="#">Game Development</a>
-                                                    </li>
-                                                    <li> 
-                                                        <a href="#">Application Design</a>
-                                                    </li>
-                                                    <li> 
-                                                        <a href="#">IT Solutions</a>
-                                                    </li>
-                                                    <li> 
-                                                        <a href="#">Tecture & Pattern</a>
-                                                    </li>
-                                                    <li> 
-                                                        <a href="#">Data Analysis</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="links-group">
-                                        <h5>More Pages</h5>
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <ul class="links">
-                                                    <li> 
-                                                        <a href="#">About Us</a>
-                                                    </li>
-                                                    <li> 
-                                                        <a href="#">Blogs</a>
-                                                    </li>
-                                                    <li> 
-                                                        <a href="#">Shop</a>
-                                                    </li>
-                                                    <li> 
-                                                        <a href="#">Contact</a>
-                                                    </li>
-                                                    <li> 
-                                                        <a href="#">Privacy Policy</a>
-                                                    </li>
-                                                    <li> 
-                                                        <a href="#">Terms of Use</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <ul class="links">
-                                                    <li> 
-                                                        <a href="#">Refund Policy</a>
-                                                    </li>
-                                                    <li> 
-                                                        <a href="#">Terms Conditions</a>
-                                                    </li>
-                                                    <li> 
-                                                        <a href="#">Join Us <small class="text-uppercase bg-blue7 text-white py-1 px-3 rounded-pill ms-2 lh-2"> hiring </small></a>
-                                                    </li>
-                                                    <li> 
-                                                        <a href="#">Get In Touch</a>
-                                                    </li>
-                                                    <li> 
-                                                        <a href="#">FAQ Page</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="foot bg-white p-3 rounded-pill text-center">
-                <p> Full Copyright & Design By <a href="#" class="fw-bold"> @ThemesCamp </a> - 2022 </p>
-            </div>
-        </div>
-        <!-- <img src="assets/img/footer/footer_4_wave.png" alt="" class="wave"> -->
-    </footer>
+    {% include 'include/footer.html' %}
     <!-- ====== end footer ====== -->
 
     <!-- ====== start to top button ====== -->
