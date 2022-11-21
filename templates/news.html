@@ -1,0 +1,148 @@
+{% extends 'homepage.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- ====== start navbar ====== -->
+    {% include 'include/header.html' %}
+    <!-- ====== end navbar ====== -->
+
+    <!--Contents-->
+    <main class="blog-page style-5 color-4">
+
+
+        <!-- ====== start blog-slider ====== -->
+        <section class="blog-slider pt-50 pb-50 style-1">
+            <div class="container">
+                <div class="section-head text-center mb-60 style-4">
+                    <h2 class="mb-20"> Наши <span> новости </span> </h2>
+                    <div class="text color-666">Последние актуальные новости от {{ setting.title}}</div>
+                </div>
+                <div class="blog-details-slider">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            {% for random in random_news %}
+                            <div class="swiper-slide">
+                                <div class="content-card">
+                                    <div class="img overlay">
+                                        <img src="{{ random.image.url }}" alt="">
+                                    </div>
+                                    <div class="info">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="cont">
+                                                    <small class="date small mb-20"> <a href="#" class="text-uppercase border-end brd-gray pe-3 me-3"> Новости </a> <i class="far fa-clock me-1"></i> <a href="#">{{ random.created }}</a> </small>
+                                                    <h2 class="title">
+                                                        <a href="page-single-post-5.html">{{ random.title }}</a>
+                                                    </h2>
+                                                    <p class="fs-13px mt-10 text-light text-info">{{ random.description|truncatewords:10 }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <!-- ====== pagination ====== -->
+                    <div class="swiper-pagination"></div>
+                    <!-- ====== arrows ====== -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+        <!-- ====== end blog-slider ====== -->
+
+
+        
+
+
+        <!-- ====== start all-news ====== -->
+        <section class="all-news section-padding blog bg-transparent style-3">
+            <div class="container">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-8">
+                        {% for new in news %}
+                        <div class="card border-0 bg-transparent rounded-0 border-bottom brd-gray pb-30 mb-30">
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <div class="img img-cover">
+                                        <img src="{{ new.image.url }}" class="radius-7" alt="...">
+                                    </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <div class="card-body p-0">
+                                        <small class="d-block date text">
+                                            <a href="#" class="text-uppercase border-end brd-gray pe-3 me-3 color-blue4 fw-bold"> Новости </a>
+                                            <i class="bi bi-clock me-1"></i>
+                                            <a href="#" class="op-8">{{ new.created }}</a>
+                                        </small>
+                                        <a href="page-single-post-5.html" class="card-title mb-10">{{ new.title }}</a>
+                                        <p class="fs-13px color-666">{{ new.description|truncatewords:10 }}</p>
+                                        <div class="auther-comments d-flex small align-items-center justify-content-between op-9">
+                                            <div class="l_side d-flex align-items-center">
+                                                <span
+                                                    class="icon-10 rounded-circle d-inline-flex justify-content-center align-items-center text-uppercase bg-blue4 p-2 me-2 text-white">
+                                                    C
+                                                </span>
+                                                <a href="#">
+                                                    <small class="text-muted"></small> {{ setting.title }}
+                                                </a>
+                                            </div>
+                                            <div class="r-side mt-1">
+                                                <i class="bi bi-chat-left-text me-1"></i>
+                                                <a href="#">10</a>
+                                                <i class="bi bi-eye ms-4 me-1"></i>
+                                                <a href="#">10</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <!-- <div class="pagination style-5 color-4 justify-content-center mt-60">
+                            <a href="#" class="active">
+                                <span>1</span>
+                            </a>
+                            <a href="#">
+                                <span>2</span>
+                            </a>
+                            <a href="#">
+                                <span>3</span>
+                            </a>
+                            <a href="#">
+                                <span>4</span>
+                            </a>
+                            <a href="#">
+                                <span>...</span>
+                            </a>
+                            <a href="#">
+                                <span>20</span>
+                            </a>
+                            <a href="#">
+                                <span class="text">next <i class="fas fa-chevron-right"></i> </span>
+                            </a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ====== end all-news ====== -->
+
+    </main>
+    <!--End-Contents-->
+
+    <!-- ====== start footer ====== -->
+    {% include 'include/footer.html' %}
+    <!-- ====== end footer ====== -->
+
+    <!-- ====== start to top button ====== -->
+    <a href="#" class="to_top bg-gray rounded-circle icon-40 d-inline-flex align-items-center justify-content-center">
+        <i class="bi bi-chevron-up fs-6 text-dark"></i>
+    </a>
+    <!-- ====== end to top button ====== -->
+
+{% endblock %}
