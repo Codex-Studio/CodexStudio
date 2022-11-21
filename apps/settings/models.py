@@ -143,3 +143,79 @@ class AboutUs(models.Model):
     class Meta:
         verbose_name = "О нас"
         verbose_name_plural = "О нас"
+
+class Benefits(models.Model):
+    title = models.CharField(
+        max_length=255,
+        verbose_name="Название преимущества"
+    )
+    description = models.CharField(
+        max_length=255,
+        verbose_name="Описание преимущества"
+    )
+    icon = models.ImageField(
+        upload_to="benefits_icons",
+        max_length=255,
+        verbose_name="Иконка преимущества"
+    )
+
+    def __str__(self):
+        return self.title 
+
+    class Meta:
+        verbose_name = "Преимущество"
+        verbose_name_plural = "Преимущества"
+
+class Review(models.Model):
+    name_surname = models.CharField(
+        max_length=255,
+        verbose_name="Имя и фамилия"
+    )
+    job_title = models.CharField(
+        max_length=100,
+        verbose_name="Должность"
+    )
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='review_images/',
+        verbose_name="Фотография клиента"
+    )
+    title = models.TextField(
+        verbose_name="Отзыв"
+    )
+    created = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    def __str__(self):
+        return self.title 
+
+    class Meta:
+        verbose_name = "Отзыв"
+        verbose_name_plural = "Отзывы"
+
+class News(models.Model):
+    title = models.CharField(
+        max_length=255,
+        verbose_name="Заголовок"
+    )
+    description = models.TextField(
+        verbose_name="Описание"
+    )
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='news_images/',
+        verbose_name="Фотография"
+    )
+    created = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    def __str__(self):
+        return self.title 
+
+    class Meta:
+        verbose_name = "Новость"
+        verbose_name_plural = "Новости"

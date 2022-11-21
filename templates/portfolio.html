@@ -81,71 +81,7 @@
     <!--End-Contents-->
 
     <!-- ====== start footer ====== -->
-    <footer class="style-4 mt-0 pt-100">
-        <div class="container">
-            <div class="section-head text-center style-4">
-                <h2 class="mb-10"> Напишите нашему <span> Боту </span> </h2>
-                <p>Напишите нашему телеграм боту, чтобы узнать по подробнее.</p>
-                <div class="d-flex align-items-center justify-content-center mt-50">
-                    <a href="https://www.apple.com/app-store/" class="btn rounded-pill bg-blue4 fw-bold text-white me-4" target="_blank">
-                        <small> <i class="fab fa-apple me-2 pe-2 border-end"></i> Связаться </small>
-                    </a>
-                    <a href="https://play.google.com/store/apps" class="btn rounded-pill hover-blue4 fw-bold border-blue4" target="_blank">
-                        <small> <i class="fab fa-google-play me-2 pe-2 border-end"></i> Написать телеграм боту </small>
-                    </a>
-                </div>
-            </div>
-            <div class="foot mt-80">
-                <div class="row align-items-center">
-                    <div class="col-lg-2">
-                        <div class="logo">
-                            <img src="{{ setting.logo.url }}" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-8">
-                        <ul class="links">
-                            <li>
-                                <a href="home-app-landing.html" class="active">Домой</a>
-                            </li>
-                            <li>
-                                <a href="page-about-5.html">О нас</a>
-                            </li>
-                            <li>
-                                <a href="page-portfolio-5.html">Портфолио</a>
-                            </li>
-                            <li>
-                                <a href="page-services-5.html">Команда</a>
-                            </li>
-                            <li>
-                                <a href="page-shop-5.html">Новости</a>
-                            </li>
-                            <li>
-                                <a href="page-contact-5.html">Связаться</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-2">
-                        <div class="dropdown">
-                            <button class="icon-25 dropdown-toggle p-0 border-0 bg-transparent rounded-circle img-cover" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="{% static 'assets/img/lang.png' %}" alt="" class="me-2">
-                                <small>RU</small>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">KG</a></li>
-                                <li><a class="dropdown-item" href="#">US</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="copywrite text-center">
-                <small class="small">
-                    © 2022 Copyrights by <a href="#" class="fw-bold text-decoration-underline">{{ setting.title }}.</a> All Rights Reserved.</a>
-                </small>
-            </div>
-        </div>
-        <!-- <img src="assets/img/footer/footer_4_wave.png" alt="" class="wave"> -->
-    </footer>
+    {% include 'include/footer.html' %}
     <!-- ====== end footer ====== -->
 
     <!-- ====== start to top button ====== -->
