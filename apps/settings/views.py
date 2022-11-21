@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from apps.settings.models import Setting, Portfolio, Partners, Service, AboutUs, ProjectType, Benefits, Review, News
+from django.shortcuts import render, redirect
+from apps.settings.models import Setting, Portfolio, Partners, Service, AboutUs, ProjectType, Benefits, Review, News, Contact
 
 # Create your views here.
 def index(request):
@@ -56,6 +56,13 @@ def services_index(request):
 
 def contact(request):
     setting = Setting.objects.latest('id')
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        subject = request.POST.get('subject')
+        contact = Contact.objects.create(name = name, email = email, phone = phone, subject = subject)
+        return redirect('index')
     context = {
         'setting' : setting,
     }

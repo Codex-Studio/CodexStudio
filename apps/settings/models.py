@@ -229,3 +229,29 @@ class News(models.Model):
     class Meta:
         verbose_name = "Новость"
         verbose_name_plural = "Новости"
+
+class Contact(models.Model):
+    name = models.CharField(
+        max_length=200,
+        verbose_name="Имя"
+    )
+    email = models.EmailField(
+        verbose_name="Почта"
+    )
+    phone = models.CharField(
+        max_length=200,
+        verbose_name="Телефонный номер"
+    )
+    subject = models.TextField(
+        verbose_name="Причина обращения"
+    )
+    created = models.DateTimeField(
+        auto_now_add=True,
+    )
+
+    def __str__(self):
+        return self.subject
+
+    class Meta:
+        verbose_name = "Контакт"
+        verbose_name_plural = "Контакты"
