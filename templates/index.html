@@ -173,63 +173,22 @@
                 </div>
                 <div class="services-content pb-100">
                     <div class="row">
+                        {% for ben in benefits %}
                         <div class="col-lg-3 col-sm-6">
                             <div class="service-item-style7">
                                 <div class="img">
-                                    <img src="{% static 'assets/img/icons/serv_icons/21.png' %}" alt="">
+                                    <img src="{{ ben.icon.url }}" alt="">
                                     <span class="icon">
                                         <i class="fas fa-globe"></i>
                                     </span>
                                 </div>
                                 <div class="info">
-                                    <h6> Сетевое решение </h6>
-                                    <p class="text"> Конвой с народным поверьем - не случайная идея. </p>
+                                    <h6> {{ ben.title }} </h6>
+                                    <p class="text"> {{ ben.description }} </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="service-item-style7">
-                                <div class="img">
-                                    <img src="{% static 'assets/img/icons/serv_icons/22.png' %}" alt="">
-                                    <span class="icon">
-                                        <i class="fas fa-book"></i>
-                                    </span>
-                                </div>
-                                <div class="info">
-                                    <h6> Бизнес-решение </h6>
-                                    <p class="text"> Конвой с народным поверьем - идея не случайная. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="service-item-style7">
-                                <div class="img">
-                                    <img src="{% static 'assets/img/icons/serv_icons/23.png' %}" alt="">
-                                    <span class="icon">
-                                        <i class="fas fa-bell"></i>
-                                    </span>
-                                </div>
-                                <div class="info">
-                                    <h6> Групповые задачи </h6>
-                                    <p class="text"> Конвой с народным поверьем - идея не случайная. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="service-item-style7">
-                                <div class="img">
-                                    <img src="{% static 'assets/img/icons/serv_icons/24.png' %}" alt="">
-                                    <span class="icon">
-                                        <i class="fas fa-users"></i>
-                                    </span>
-                                </div>
-                                <div class="info">
-                                    <h6> Финансовая служба </h6>
-                                    <p class="text"> Конвой с народным поверьем - идея не случайная. </p>
-                                    <a href="#"> <i class="fal fa-long-arrow-right"></i> Read More  <i class="fal fa-long-arrow-right"></i> </a>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -248,27 +207,28 @@
                         <img src="{% static 'assets/img/line_r.png' %}" alt="">
                     </div>
                     <h2 class="">
-                        10 отзывов <span> о </span> <br> {{ setting.title }} 
+                        {{ reviews.all.count }} отзывов <span> о </span> <br> {{ setting.title }} 
                     </h2>
                 </div>
                 <div class="testimonials-slider7 position-relative overflow-hidden">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
+                            {% for review in reviews %}
                             <div class="swiper-slide">
                                 <div class="content">
                                     <div class="row justify-content-center">
                                         <div class="col-lg-10">
                                             <div class="testi-card">
                                                 <div class="text">
-                                                    “ It uses a directory of over 200 latin words combine a half of model sentence structures. All generations on the internet trends to repeat predefined chunks as nessessary to make this file. ”
+                                                    “ {{ review.title }} ”
                                                 </div>
                                                 <div class="author">
                                                     <div class="img icon-60 rounded-circle overflow-hidden img-cover me-3 flex-shrink-0">
-                                                        <img src="{% static 'assets/img/testimonials/user7.png' %}" alt="">
+                                                        <img src="{{ review.image.url }}" alt="">
                                                     </div>
                                                     <div class="inf">
-                                                        <p> Head Of Idea </p>
-                                                        <h6> Alonso D.Dowson </h6>
+                                                        <p> {{ review.job_title }} </p>
+                                                        <h6> {{ review.name_surname }} </h6>
                                                     </div>
                                                 </div>
                                             </div>
@@ -276,28 +236,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="content">
-                                    <div class="row justify-content-center">
-                                        <div class="col-lg-10">
-                                            <div class="testi-card">
-                                                <div class="text">
-                                                    “ It uses a directory of over 200 latin words combine a half of model sentence structures. All generations on the internet trends to repeat predefined chunks as nessessary to make this file. ”
-                                                </div>
-                                                <div class="author">
-                                                    <div class="img icon-60 rounded-circle overflow-hidden img-cover me-3 flex-shrink-0">
-                                                        <img src="{% static 'assets/img/testimonials/user3.jpeg' %}" alt="">
-                                                    </div>
-                                                    <div class="inf">
-                                                        <p> Head Of Idea </p>
-                                                        <h6> Alonso D.Dowson </h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -331,24 +270,17 @@
                                 </h2>
                             </div>
                             <ul>
+                                {% for ben in benefits %}
                                 <li>
                                     <div class="icon">
-                                        <img src="{% static 'assets/img/choose_us/icon1.png' %}" alt="">
+                                        <img src="{{ ben.icon.url }}" alt="">
                                     </div>
                                     <div class="inf">
-                                        <h6> AI Intregrations </h6>
-                                        <p> Automatically syncs across all your devices </p> 
+                                        <h6> {{ ben.title }} </h6>
+                                        <p> {{ ben.description }} </p> 
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="icon">
-                                        <img src="{% static 'assets/img/choose_us/icon2.png' %}" alt="">
-                                    </div>
-                                    <div class="inf">
-                                        <h6> On Demand Design </h6>
-                                        <p> Automatically syncs across all your devices </p> 
-                                    </div>
-                                </li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>
@@ -366,87 +298,42 @@
                 <div class="section-head text-center style-4 mb-80">
                     <div class="top-title mb-10">
                         <img src="{% static 'assets/img/line_l.png' %}" alt="">
-                        <h5> blog </h5>
+                        <h5> Новости </h5>
                         <img src="{% static 'assets/img/line_r.png' %}" alt="">
                     </div>
                     <h2 class="">
-                        Company <span> News & Insights </span>
+                        Новости о <span> {{ setting.title}} </span>
                     </h2>
                 </div>
                 <div class="content">
                     <div class="row">
+                        {% for new in news %}
                         <div class="col-lg-4">
                             <div class="blog-card style-7 mt-5 mt-lg-0">
                                 <div class="img img-cover">
-                                    <img src="{% static 'assets/img/blog/15.png' %}" alt="">
+                                    <img src="{{ new.image.url }}" alt="">
                                 </div>
                                 <div class="info pt-40">
                                     <div class="date-tags">
                                         <div class="tags">
-                                            <a href="page-blog-app.html">IT Solution</a>
+                                            <a href="page-blog-app.html">IT</a>
                                         </div>
                                         <a href="#" class="date">
-                                            Nov 21, 2022 
+                                            {{ new.created|truncatewords:1 }}
                                         </a>
                                         <span class="color-999"> | </span>
                                         <a href="#" class="author color-999">
-                                            By <span class="color-000 fw-bold"> Admin </span>
+                                            <span class="color-000 fw-bold"> {{ setting.title }} </span>
                                         </a>
                                     </div>
                                     <h4 class="title">
-                                        <a href="page-single-post-app.html"> Create Live Segments & Target The Right People... </a>
+                                        {{ new.title }}
                                     </h4>
+                                    <a href="page-single-post-app.html"> {{ new.description|truncatewords:10 }} </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
-                            <div class="blog-card style-7 mt-5 mt-lg-0">
-                                <div class="img img-cover">
-                                    <img src="{% static 'assets/img/blog/16.png' %}" alt="">
-                                </div>
-                                <div class="info pt-40">
-                                    <div class="date-tags">
-                                        <div class="tags">
-                                            <a href="page-blog-app.html">IT Solution</a>
-                                        </div>
-                                        <a href="#" class="date">
-                                            Nov 21, 2022 
-                                        </a>
-                                        <span class="color-999"> | </span>
-                                        <a href="#" class="author color-999">
-                                            By <span class="color-000 fw-bold"> Admin </span>
-                                        </a>
-                                    </div>
-                                    <h4 class="title">
-                                        <a href="page-single-post-app.html"> Through The Collaboration With Customers... </a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="blog-card style-7 mt-5 mt-lg-0">
-                                <div class="img img-cover">
-                                    <img src="{% static 'assets/img/blog/17.png' %}" alt="">
-                                </div>
-                                <div class="info pt-40">
-                                    <div class="date-tags">
-                                        <div class="tags">
-                                            <a href="page-blog-app.html">IT Solution</a>
-                                        </div>
-                                        <a href="#" class="date">
-                                            Nov 21, 2022 
-                                        </a>
-                                        <span class="color-999"> | </span>
-                                        <a href="#" class="author color-999">
-                                            By <span class="color-000 fw-bold"> Admin </span>
-                                        </a>
-                                    </div>
-                                    <h4 class="title">
-                                        <a href="page-single-post-app.html"> In Discussing Needs & Demand, We're Able To... </a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

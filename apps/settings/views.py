@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from apps.settings.models import Setting, Portfolio, Partners, Service, AboutUs, ProjectType
+from apps.settings.models import Setting, Portfolio, Partners, Service, AboutUs, ProjectType, Benefits, Review, News
 
 # Create your views here.
 def index(request):
@@ -9,6 +9,9 @@ def index(request):
     about = AboutUs.objects.latest('id')
     project_type = ProjectType.objects.all()
     portfolio = Portfolio.objects.all()
+    benefits = Benefits.objects.all().order_by('?')
+    reviews = Review.objects.all().order_by('?')
+    news = News.objects.all().order_by('created')
     context = {
         'setting' : setting,
         'partners' : partners,
@@ -16,6 +19,9 @@ def index(request):
         'about' : about,
         'project_type' : project_type,
         'portfolio' : portfolio,
+        'benefits' : benefits,
+        'reviews' : reviews,
+        'news' : news,
     }
     return render(request, 'index.html', context)
 
