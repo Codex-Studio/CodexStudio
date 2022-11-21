@@ -22,6 +22,16 @@ class Setting(models.Model):
         max_length=200,
         verbose_name="Номер телефона"
     )
+    address = models.CharField(
+        max_length=255,
+        verbose_name="Адрес",
+        blank = True, null = True
+    )
+    telegram_bot = models.URLField(
+        max_length=255,
+        verbose_name="Ссылка на бот",
+        blank = True, null = True
+    )
 
     def __str__(self):
         return self.title 

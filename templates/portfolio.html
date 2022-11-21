@@ -61,10 +61,10 @@
                                 <h2 class="mb-20"> {{ setting.description }}  <span> {{ setting.title }} </span> </h2>
                             </div>
                             <div class="butns mt-70">
-                                <a href="page-contact-app.html" class="btn rounded-pill bg-blue4 fw-bold text-white me-4" target="_blank">
+                                <a href="{% url 'contact' %}" class="btn rounded-pill bg-blue4 fw-bold text-white me-4" target="_blank">
                                     <small> Связаться </small>
                                 </a>
-                                <a href="page-about-app.html" class="btn rounded-pill hover-blue4 fw-bold border-blue4" target="_blank">
+                                <a href="{% url 'services_index' %}" class="btn rounded-pill hover-blue4 fw-bold border-blue4" target="_blank">
                                     <small> Узнать цены </small>
                                 </a>
                             </div>

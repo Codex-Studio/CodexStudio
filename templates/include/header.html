@@ -1,22 +1,21 @@
 {% load static %}
 <div class="side_menu style-7" id="side_menu">
-    <a href="#0" class="side_menu_cls">
+    <a href="{% url 'index' %}" class="side_menu_cls">
         <img src="{% static 'assets/img/icons/4dots.png' %}" alt="">
     </a>
     <div class="content">
         <div class="logo">
             <a href="{% url 'index' %}" class="w-100">
-                <img src="{% static 'assets/img/logo_lgr.png' %}" alt="">
+                <img src="{{ setting.logo.url }}" alt="">
             </a>
         </div>
         <div class="pages_links">
             <ul>
                 <li><a href="{% url 'index' %}" class="active">Домой</a></li>
-                <li><a href="#{% url 'portfolio_index' %}">Портфолио</a></li>
-                <li><a href="#{% url 'services_index' %}">Услуги</a></li>
-                <!-- <li><a href="#">Команда</a></li> -->
+                <li><a href="{% url 'portfolio_index' %}">Портфолио</a></li>
+                <li><a href="{% url 'services_index' %}">Услуги</a></li>
                 <li><a href="{% url 'about_us' %}">О нас</a></li>
-                <li><a href="#">Связаться</a></li>
+                <li><a href="{% url 'contact' %}">Связаться</a></li>
             </ul>
         </div>
         <div class="side_foot">
