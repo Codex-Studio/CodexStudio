@@ -1,5 +1,5 @@
 from django.urls import path 
-from apps.settings.views import index, portfolio_index, portfolio_detail, services_index, contact, about_us
+from apps.settings.views import index, portfolio_index, portfolio_detail, services_index, contact, about_us, news_index
 
 urlpatterns = [
     path('', index, name = "index"),
@@ -8,4 +8,5 @@ urlpatterns = [
     path('services/', services_index, name = "services_index"),
     path('contact/', contact, name = "contact"),
     path('about_us/', about_us, name = "about_us"),
+    path('news/', news_index, name = "news_index")
 ]

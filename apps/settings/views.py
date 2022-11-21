@@ -46,9 +46,11 @@ def portfolio_detail(request, id):
 def services_index(request):
     setting = Setting.objects.latest('id')
     services = Service.objects.all().order_by('-id')
+    reviews = Review.objects.all().order_by('?')
     context = {
         'setting' : setting,
         'services' : services,
+        'reviews' : reviews,
     }
     return render(request, 'services.html', context)
 
@@ -64,10 +66,25 @@ def about_us(request):
     about = AboutUs.objects.latest('id')
     portfolio = Portfolio.objects.all()
     partners = Partners.objects.all().order_by('-id')
+    first_news = News.objects.all().order_by('-created')[:1]
+    news = News.objects.all().order_by('-created')[1:]
     context = {
         'setting' : setting,
         'about' : about,
         'portfolio' : portfolio,
         'partners' : partners,
+        'first_news' : first_news,
+        'news' : news,
     }
     return render(request, 'about.html', context)
+
+def news_index(request):
+    setting = Setting.objects.latest('id')
+    news = News.objects.all().order_by('created')
+    random_news = News.objects.all().order_by('?')[:1]
+    context = {
+        'setting' : setting,
+        'news' : news,
+        'random_news' : random_news,
+    }
+    return render(request, 'news.html', context)

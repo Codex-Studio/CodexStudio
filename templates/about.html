@@ -38,40 +38,9 @@
                             <div class="section-head style-5 mb-40">
                                 <h2 class="mb-20"> {{ about.title }}</h2>
                             </div>
-                            <ul class="nav nav-pills" id="pills-tab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                  <button class="nav-link active" id="abt1-tab" data-bs-toggle="pill" data-bs-target="#abt1" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
-                                        О нас
-                                  </button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                  <button class="nav-link" id="abt2-tab" data-bs-toggle="pill" data-bs-target="#abt2" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
-                                        Наша миссия
-                                  </button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="abt3-tab" data-bs-toggle="pill" data-bs-target="#abt1" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
-                                            Наш девиз
-                                    </button>
-                                </li>
-                            </ul>
                             <div class="tab-content" id="pills-tabContent">
                                 <div class="tab-pane fade show active" id="abt1" role="tabpanel">
                                     <p class="text"> {{ about.description }}. </p>
-                                    <div class="d-flex align-items-center mt-40">
-                                        <div class="btns">
-                                            <a href="{% url 'contact' %}" class="btn rounded-pill blue5-3Dbutn hover-blue2 sm-butn fw-bold">
-                                                <span> Связаться </span>
-                                            </a>
-                                        </div>
-                                        <div class="inf ms-3">
-                                            <p class="color-999"> Электронная почта поддержки </p>
-                                            <a href="mailto: {{ setting.email }}" class="fw-bold color-000"> {{ setting.email }} </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="abt2" role="tabpanel">
-                                    <p class="text"> The uploading and updating processes made by suppliers can be streamlined through front-end dashboards that create better ease of access. </p>
                                     <div class="d-flex align-items-center mt-40">
                                         <div class="btns">
                                             <a href="{% url 'contact' %}" class="btn rounded-pill blue5-3Dbutn hover-blue2 sm-butn fw-bold">
@@ -99,7 +68,7 @@
         <section class="timeline section-padding bg-gray5">
             <div class="container">
                 <div class="section-head text-center mb-70 style-5">
-                    <h2 class="mb-20"> О нашей <span> развитии </span> </h2>
+                    <h2 class="mb-20"> О развитии <span> {{ setting.title }} </span> </h2>
                     <p>Сделали более чем {{ portfolio.all.count }} проектов</p>
                 </div>
                 <div class="timeline-content">
@@ -112,8 +81,8 @@
                             </div>
                             <div class="col-lg-4">
                                 <div class="card-info wow left_to_right_apperance ">
-                                    <h6> Создание CodeX </h6>
-                                    <p> Sass which stands for 'Syntactically awesome style sheet is an extension of that enables you to use things like variables. </p>
+                                    <h6> Создание Codex </h6>
+                                    <p> 26 августа 2021 года была создана codex studio </p>
                                     <span class="num"> 01 </span>
                                 </div> 
                             </div>
@@ -125,7 +94,7 @@
                             <div class="col-lg-4">
                                 <div class="card-info wow left_to_right_apperance">
                                     <h6> Первый заказ </h6>
-                                    <p> Sass which stands for 'Syntactically awesome style sheet is an extension of that enables you to use things like variables. </p>
+                                    <p> Первый заказ для мобилографа sanvsk. Сайт для мобилографии за 200$ </p>
                                     <span class="num"> 02 </span>
                                 </div> 
                             </div>
@@ -147,7 +116,7 @@
                             <div class="col-lg-4">
                                 <div class="card-info wow left_to_right_apperance ">
                                     <h6> Первый интернет магазин </h6>
-                                    <p> Sass which stands for 'Syntactically awesome style sheet is an extension of that enables you to use things like variables. </p>
+                                    <p> Первый крупный интернет магазин для московского онлайн магазина airsnakers.ru. Проект за 600$  </p>
                                     <span class="num"> 03 </span>
                                 </div> 
                             </div>
@@ -159,7 +128,7 @@
                             <div class="col-lg-4">
                                 <div class="card-info wow left_to_right_apperance ">
                                     <h6> Первый крупный заказ на 1900$  </h6>
-                                    <p> Sass which stands for 'Syntactically awesome style sheet is an extension of that enables you to use things like variables. </p>
+                                    <p> Первый крупный заказ для веб приложения kyzmat24 </p>
                                     <span class="num"> 04 </span>
                                 </div> 
                             </div>
@@ -181,7 +150,7 @@
                             <div class="col-lg-4">
                                 <div class="card-info wow left_to_right_apperance ">
                                     <h6> Выход в торговую прощадку </h6>
-                                    <p> Sass which stands for 'Syntactically awesome style sheet is an extension of that enables you to use things like variables. </p>
+                                    <p> Выход на торговую площадку с багажом проектов и горой опыта </p>
                                     <span class="num"> 05 </span>
                                 </div> 
                             </div>
@@ -243,89 +212,55 @@
                     </div>
                     <div class="blog-content">
                         <div class="row">
+                            {% for new in first_news %}
                             <div class="col-lg-6">
                                 <div class="main-post wow fadeInUp">
                                     <div class="img img-cover">
-                                        <img src="assets/img/blog/18.jpg" alt="">
+                                        <img src="{{ new.image.url }}" alt="">
                                         <div class="tags">
-                                            <a href="#"> Analysis </a>
+                                            <a href="#"> IT </a>
                                         </div>
                                     </div>
                                     <div class="info pt-30">
                                         <div class="date-author">
                                             <a href="#" class="date">
-                                                Nov 21, 2022 
+                                                {{ new.created }}
                                             </a>
                                             <span class="color-999 mx-3"> | </span>
                                             <a href="#" class="author color-999">
-                                                By <span class="color-000 fw-bold"> Admin </span>
+                                                <span class="color-000 fw-bold"> {{ setting.title }} </span>
                                             </a>
                                         </div>
                                         <h4 class="title">
-                                            <a href="#"> Create Live Segments & Target The Right People For Your Amazing Team. </a>
+                                            <a href="#"> {{ new.title }} </a>
                                         </h4>
                                     </div>
                                 </div>
                             </div>
+                            {% endfor %}
                             <div class="col-lg-6">
                                 <div class="side-posts">
+                                    {% for new in news %}
                                     <div class="item wow fadeInUp">
                                         <div class="img img-cover">
-                                            <img src="assets/img/blog/19.jpg" alt="">
+                                            <img src="{{ new.image.url }}" alt="">
                                         </div>
                                         <div class="info">
                                             <div class="date-author">
                                                 <a href="#" class="date">
-                                                    Nov 21, 2022 
+                                                    {{ new.created }} 
                                                 </a>
                                                 <span class="color-999 mx-3"> | </span>
                                                 <a href="#" class="author color-999">
-                                                    By <span class="color-000 fw-bold"> Admin </span>
+                                                    <span class="color-000 fw-bold"> {{ setting.title }} </span>
                                                 </a>
                                             </div>
                                             <h4 class="title">
-                                                <a href="#"> Best unlocked me an striking perceive. </a>
+                                                <a href="#"> {{ new.title }} </a>
                                             </h4>
                                         </div>
                                     </div>
-                                    <div class="item wow fadeInUp" data-wow-delay="0.2s">
-                                        <div class="img img-cover">
-                                            <img src="assets/img/blog/20.jpg" alt="">
-                                        </div>
-                                        <div class="info">
-                                            <div class="date-author">
-                                                <a href="#" class="date">
-                                                    Nov 21, 2022 
-                                                </a>
-                                                <span class="color-999 mx-3"> | </span>
-                                                <a href="#" class="author color-999">
-                                                    By <span class="color-000 fw-bold"> Admin </span>
-                                                </a>
-                                            </div>
-                                            <h4 class="title">
-                                                <a href="#"> Me in resolution pianoforte continuing we. </a>
-                                            </h4>
-                                        </div>
-                                    </div>
-                                    <div class="item wow fadeInUp" data-wow-delay="0.4s">
-                                        <div class="img img-cover">
-                                            <img src="assets/img/blog/21.jpg" alt="">
-                                        </div>
-                                        <div class="info">
-                                            <div class="date-author">
-                                                <a href="#" class="date">
-                                                    Nov 21, 2022 
-                                                </a>
-                                                <span class="color-999 mx-3"> | </span>
-                                                <a href="#" class="author color-999">
-                                                    By <span class="color-000 fw-bold"> Admin </span>
-                                                </a>
-                                            </div>
-                                            <h4 class="title">
-                                                <a href="#"> Most my no spot felt by no he in forfeited. </a>
-                                            </h4>
-                                        </div>
-                                    </div>
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>
