@@ -86,7 +86,7 @@
                         <div class="swiper-wrapper">
                             {% for service in services %}
                             <div class="swiper-slide">
-                                <a href="#" class="features-card style-7">
+                                <a href="{% url 'services_index' %}" class="features-card style-7">
                                     <div class="icon">
                                         <img src="{{ service.icon.url }}" alt="">
                                     </div>
@@ -132,14 +132,12 @@
                                 {{ about.description }}
                             </div>
                             <ul>
+                                {% for ben in benefits %}
                                 <li class="d-flex mb-20"> 
                                     <i class="fas fa-check-circle color-blue7 me-2 mt-2"></i>
-                                    <div class="text"> <strong class="color-000"> Качество продукции: </strong> Автоматически синхронизируется на всех ваших устройствах. Вы также можете получить доступ... </div>    
+                                    <div class="text"> <strong class="color-000"> {{ ben.title }} </strong> {{ ben.description }} </div>    
                                 </li>
-                                <li class="d-flex mb-20"> 
-                                    <i class="fas fa-check-circle color-blue7 me-2 mt-2"></i>
-                                    <div class="text"> <strong class="color-000"> Дизайн по запросу: </strong> Поддерживаются изображения, видео, PDF-файлы и аудиофайлы. </div>    
-                                </li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>
@@ -252,10 +250,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="img">
-                            <img src="{% static 'assets/img/choose_us/choose7.jpg' %}" alt="">
-                            <a href="https://youtu.be/pGbIOC83-So?t=21" class="play_btn" data-lity>
-                                <i class="fas fa-play"></i>
-                            </a>
+                            <img src="{{ about.image.url }}" alt="">
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -355,7 +350,7 @@
                             <p> У нас есть телеграм бот, который работает 24/7 </p>
                             <h3> Напиште нам в telegram </h3>
                             <div class="btns mt-50">
-                                <a href="https://t.me/Kurmanbek11" class="btn btn-icon-circle rounded-pill bg-black fw-bold text-white me-4 mb-3 mb-lg-0">
+                                <a href="{{ setting.telegram_bot }}" class="btn btn-icon-circle rounded-pill bg-black fw-bold text-white me-4 mb-3 mb-lg-0">
                                     <small> Написать боту <i class="fas fa-long-arrow-alt-right"></i> </small>
                                 </a>
                                 <a href="{% url 'portfolio_index' %}" class="btn btn-icon-circle rounded-pill fw-bold brd-light text-white hover-blue7">
@@ -366,7 +361,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="img img2">
-                            <img src="assets/img/vector2.png" alt="">
+                            <img src="{% static 'assets/img/vector2.png' %}" alt="">
                         </div>
                     </div>
                 </div>
