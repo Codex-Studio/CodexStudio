@@ -30,9 +30,9 @@
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="cont">
-                                                    <small class="date small mb-20"> <a href="#" class="text-uppercase border-end brd-gray pe-3 me-3"> Новости </a> <i class="far fa-clock me-1"></i> <a href="#">{{ random.created }}</a> </small>
+                                                    <small class="date small mb-20"> <a href="{% url 'news_detail' random.id %}" class="text-uppercase border-end brd-gray pe-3 me-3"> Новости </a> <i class="far fa-clock me-1"></i> <a href="#">{{ random.created }}</a> </small>
                                                     <h2 class="title">
-                                                        <a href="page-single-post-5.html">{{ random.title }}</a>
+                                                        <a href="{% url 'news_detail' random.id %}">{{ random.title }}</a>
                                                     </h2>
                                                     <p class="fs-13px mt-10 text-light text-info">{{ random.description|truncatewords:10 }}</p>
                                                 </div>
@@ -75,11 +75,11 @@
                                 <div class="col-lg-7">
                                     <div class="card-body p-0">
                                         <small class="d-block date text">
-                                            <a href="#" class="text-uppercase border-end brd-gray pe-3 me-3 color-blue4 fw-bold"> Новости </a>
+                                            <a href="{% url 'news_index' %}" class="text-uppercase border-end brd-gray pe-3 me-3 color-blue4 fw-bold"> Новости </a>
                                             <i class="bi bi-clock me-1"></i>
-                                            <a href="#" class="op-8">{{ new.created }}</a>
+                                            <a href="{% url 'news_detail' new.id %}" class="op-8">{{ new.created }}</a>
                                         </small>
-                                        <a href="page-single-post-5.html" class="card-title mb-10">{{ new.title }}</a>
+                                        <a href="{% url 'news_detail' new.id %}" class="card-title mb-10">{{ new.title }}</a>
                                         <p class="fs-13px color-666">{{ new.description|truncatewords:10 }}</p>
                                         <div class="auther-comments d-flex small align-items-center justify-content-between op-9">
                                             <div class="l_side d-flex align-items-center">
@@ -87,15 +87,15 @@
                                                     class="icon-10 rounded-circle d-inline-flex justify-content-center align-items-center text-uppercase bg-blue4 p-2 me-2 text-white">
                                                     C
                                                 </span>
-                                                <a href="#">
+                                                <a href="{% url 'news_detail' new.id %}">
                                                     <small class="text-muted"></small> {{ setting.title }}
                                                 </a>
                                             </div>
                                             <div class="r-side mt-1">
                                                 <i class="bi bi-chat-left-text me-1"></i>
-                                                <a href="#">10</a>
+                                                <a href="{% url 'news_detail' new.id %}">10</a>
                                                 <i class="bi bi-eye ms-4 me-1"></i>
-                                                <a href="#">10</a>
+                                                <a href="{% url 'news_detail' new.id %}">10</a>
                                             </div>
                                         </div>
                                     </div>

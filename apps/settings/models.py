@@ -154,6 +154,26 @@ class AboutUs(models.Model):
         verbose_name = "О нас"
         verbose_name_plural = "О нас"
 
+class AboutUSImages(models.Model):
+    about = models.ForeignKey(
+        AboutUs,
+        on_delete=models.CASCADE,
+        related_name="about_us_images"
+    )
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='about_images/',
+        verbose_name="Фотография проекта"
+    )
+
+    def __str__(self):
+        return f'{self.id} {self.about}'
+
+    class Meta:
+        verbose_name = "О нас доп фото"
+        verbose_name_plural = "О нас доп фото"
+
 class Benefits(models.Model):
     title = models.CharField(
         max_length=255,

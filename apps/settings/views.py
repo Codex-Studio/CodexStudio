@@ -95,3 +95,24 @@ def news_index(request):
         'random_news' : random_news,
     }
     return render(request, 'news.html', context)
+
+def news_detail(request, id):
+    setting = Setting.objects.latest('id')
+    news = News.objects.get(id = id)
+    context = {
+        'setting' : setting,
+        'news' : news,
+    }
+    return render(request, 'news_detail.html', context)
+
+def error(request):
+    return render(request, 'page_404.html')
+
+def handler404(request, exception):
+    setting = Setting.objects.latest('id')
+    context = {
+        'setting' : setting,
+    }
+    response = render(request, "page_404.html", context)
+    response.status_code = 404
+    return response

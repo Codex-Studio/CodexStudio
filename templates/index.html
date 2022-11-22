@@ -311,20 +311,20 @@
                                 <div class="info pt-40">
                                     <div class="date-tags">
                                         <div class="tags">
-                                            <a href="page-blog-app.html">IT</a>
+                                            <a href="{% url 'news_detail' new.id %}">IT</a>
                                         </div>
-                                        <a href="#" class="date">
+                                        <a href="{% url 'news_detail' new.id %}" class="date">
                                             {{ new.created|truncatewords:1 }}
                                         </a>
                                         <span class="color-999"> | </span>
-                                        <a href="#" class="author color-999">
+                                        <a href="{% url 'news_detail' new.id %}" class="author color-999">
                                             <span class="color-000 fw-bold"> {{ setting.title }} </span>
                                         </a>
                                     </div>
                                     <h4 class="title">
-                                        {{ new.title }}
+                                        <a href="{% url 'news_detail' new.id %}">{{ new.title }}</a>
                                     </h4>
-                                    <a href="page-single-post-app.html"> {{ new.description|truncatewords:10 }} </a>
+                                    <a href="{% url 'news_detail' new.id %}"> {{ new.description|truncatewords:10 }} </a>
                                 </div>
                             </div>
                         </div>
