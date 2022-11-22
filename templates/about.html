@@ -178,27 +178,21 @@
                 </div>
                 <h5 class="text-center mt-50"> Более чем <span class="color-blue5"> {{ partners.all.count }} </span> компании сотрудничают с нами </h5>
             </div>
+            {% if about.about_us_images.all %}
             <div class="about2-imgs-slider pt-100">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
+                        {% for image in about.about_us_images.all %}
                         <div class="swiper-slide">
-                            <a href="#" class="img img-cover">
-                                <img src="{% static 'assets/img/about/about2_1.png' %}" alt="">
+                            <a href="" class="img img-cover">
+                                <img src="{{ image.image.url }}" alt="">
                             </a>
                         </div>
-                        <div class="swiper-slide">
-                            <a href="#" class="img img-cover">
-                                <img src="{% static 'assets/img/about/about2_2.png' %}" alt="">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="#" class="img img-cover">
-                                <img src="{% static 'assets/img/about/about2_3.png' %}" alt="">
-                            </a>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
+            {% endif %}
         </section>
         <!-- ====== end career form ====== -->
 
