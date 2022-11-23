@@ -164,6 +164,7 @@
 
 
         <!-- ====== start career form ====== -->
+        {% if partners %}
         <section class="clients-imgs pt-100">
             <div class="container">
                 <div class="section-head text-center mb-70 style-5">
@@ -194,9 +195,11 @@
             </div>
             {% endif %}
         </section>
+        {% endif %}
         <!-- ====== end career form ====== -->
 
         <!-- ====== start blog ====== -->
+        {% if news %}
         <section class="blog style-8">
             <div class="container">
                 <div class="content section-padding">
@@ -262,6 +265,7 @@
                 </div>
             </div>
         </section>
+        {% endif %}
         <!-- ====== end blog ====== -->
 
     </main>

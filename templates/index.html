@@ -42,6 +42,7 @@
                             <!-- <img src="{% static 'assets/img/header/head7_rock.png' %}" alt="" class="rock7 slide_up_down"> -->
                         </div>
                     </div>
+                    {% if partners %}
                     <div class="col-12">
                         <div class="sponsers mt-30">
                             <div class="title me-5 flex-shrink-0">
@@ -56,6 +57,7 @@
                             </div>
                         </div>
                     </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -65,8 +67,8 @@
 
     <!--Contents-->
     <main>
-
         <!-- ====== start features ====== -->
+        {% if services %}
         <section class="features style-7 section-padding">
             <div class="container">
                 <div class="section-head text-center style-4 mb-40">
@@ -111,6 +113,7 @@
             </div>
             <img src="{% static 'assets/img/feat_circle.png' %}" alt="" class="img-circle rotate-center">
         </section>
+        {% endif %}
         <!-- ====== end features ====== -->
 
         <!-- ====== start about ====== -->
@@ -157,6 +160,7 @@
         <!-- ====== end about ====== -->
 
         <!-- ====== start services ====== -->
+        {% if benefits %}
         <section class="services style-7 pt-100">
             <div class="container">
                 <div class="section-head text-center style-4 mb-50">
@@ -191,11 +195,13 @@
                 </div>
             </div>
         </section>
+        {% endif %}
         <!-- ====== end services ====== -->
 
         
 
         <!-- ====== start testimonials ====== -->
+        {% if reviews %}
         <section class="testimonials style-7 section-padding">
             <div class="container">
                 <div class="section-head text-center style-4 mb-80">
@@ -242,9 +248,11 @@
             <img src="{% static 'assets/img/testimonials/testi7_back.png' %}" alt="" class="img_back slide_up_down">
             <img src="{% static 'assets/img/testimonials/testi7_qout.png' %}" alt="" class="testi_qout">
         </section>
+        {% endif %}
         <!-- ====== end testimonials ====== -->
 
         <!-- ====== start choose-us ====== -->
+        {% if benefits %}
         <section class="choose-us style-7 section-padding">
             <div class="container">
                 <div class="row align-items-center">
@@ -285,9 +293,11 @@
             <img src="{% static 'assets/img/about/about_s4_wave.png' %}" alt="" class="bottom-wave">
             <img src="{% static 'assets/img/choose_us/choose7_circe.png' %}" alt="" class="choose-circle rotate-center">
         </section>
+        {% endif %}
         <!-- ====== end choose-us ====== -->
 
         <!-- ====== start blog ====== -->
+        {% if news %}
         <section class="blog style-7 section-padding">
             <div class="container">
                 <div class="section-head text-center style-4 mb-80">
@@ -334,6 +344,7 @@
             </div>
             <img src="{% static 'assets/img/shap_color_7.png' %}" alt="" class="shap_color">
         </section>
+        {% endif %}
         <!-- ====== end blog ====== -->
 
         <!-- ====== start chat-banner ====== -->
@@ -342,7 +353,7 @@
                 <div class="row align-items-end">
                     <div class="col-lg-3 col-sm-6 d-none d-lg-block">
                         <div class="img img1">
-                            <img src="assets/img/vector1.png" alt="">
+                            <img src="{% static 'assets/img/vector1.png' %}" alt="">
                         </div>
                     </div>
                     <div class="col-lg-5">
