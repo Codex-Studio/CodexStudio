@@ -11,6 +11,7 @@
 
 
         <!-- ====== start features ====== -->
+        {% if services %}
         <section class="features section-padding pt-50 style-5">
             <div class="container">
                 <div class="row justify-content-center">
@@ -46,9 +47,11 @@
                 </div>
             </div>
         </section>
+        {% endif %}
         <!-- ====== end features ====== -->
 
         <!-- ====== start testimonials ====== -->
+        {% if reviews %}
         <section class="testimonials section-padding bg-gray5 style-5">
             <div class="container">
                 <div class="section-head text-center mb-60 style-5">
@@ -89,6 +92,7 @@
                 </div>
             </div>
         </section>
+        {% endif %}
         <!-- ====== end testimonials ====== -->
 
 

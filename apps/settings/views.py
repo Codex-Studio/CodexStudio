@@ -3,10 +3,13 @@ from apps.settings.models import Setting, Portfolio, Partners, Service, AboutUs,
 
 # Create your views here.
 def index(request):
-    setting = Setting.objects.latest('id')
+    try:
+        setting = Setting.objects.latest('id')
+        about = AboutUs.objects.latest('id')
+    except:
+        return render(request, 'page_404.html')
     partners = Partners.objects.all().order_by('-id')
     services = Service.objects.all().order_by('?')[:3]
-    about = AboutUs.objects.latest('id')
     project_type = ProjectType.objects.all()
     portfolio = Portfolio.objects.all()
     benefits = Benefits.objects.all().order_by('?')
