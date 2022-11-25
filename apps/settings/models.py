@@ -268,6 +268,11 @@ class Contact(models.Model):
     created = models.DateTimeField(
         auto_now_add=True,
     )
+    status = models.BooleanField(
+        verbose_name="Статус обращения",
+        help_text="False - не решен, True - решен",
+        default=False
+    )
 
     def __str__(self):
         return self.subject
