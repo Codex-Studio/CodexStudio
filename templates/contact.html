@@ -25,6 +25,7 @@
                             <h5>{{ setting.email }} </h5>
                         </div>
                     </div>
+                    {% if setting.address %}
                     <div class="commun-card">
                         <div class="icon icon-45">
                             <img src="{% static 'assets/img/icons/map3d.png' %}" alt="">
@@ -33,6 +34,8 @@
                             <h5>{{ setting.address }}</h5>
                         </div>
                     </div>
+                    {% endif %}
+                    {% if setting.phone %}
                     <div class="commun-card">
                         <div class="icon icon-45">
                             <img src="{% static 'assets/img/icons/msg3d.png' %}" alt="">
@@ -41,6 +44,7 @@
                             <h5>{{ setting.phone }}</h5>
                         </div>
                     </div>
+                    {% endif %}
                 </div>
             </div>
         </section>
@@ -72,16 +76,9 @@
                                             <input type="text" name="subject" class="form-control" placeholder="Причина обращения">
                                         </div>
                                     </div>
+                                    
                                     <div class="col-lg-12 text-center">
-                                        <div class="form-check d-inline-flex mt-30 mb-30">
-                                            <input class="form-check-input me-2 mt-0" type="checkbox" value="" id="flexCheckDefault">
-                                            <label class="form-check-label small" for="flexCheckDefault">
-                                                Отправляя, я соглашаюсь с <a href="#" class="text-decoration-underline">условиями обработки услуг</a>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 text-center">
-                                        <input type="submit" value="Send Your Request" class="btn rounded-pill bg-blue4 fw-bold text-white text-light fs-12px">
+                                        <input type="submit" value="Отправить" class="btn rounded-pill bg-blue4 fw-bold text-white text-light fs-12px">
                                     </div>
                                 </div>
                             </form>
@@ -95,9 +92,11 @@
         <!-- ====== end contact page ====== -->
 
         <!-- ====== start contact page ====== -->
+        {% if setting.url_maps %}
         <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1275.2091476802827!2d72.80367842242843!3d40.520030771625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bdaf43b0b9c00f%3A0x1aa9c672c00b1a9e!2z0JLQndCX0JjQntCd!5e0!3m2!1sru!2skg!4v1668943119940!5m2!1sru!2skg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="{{ setting.url_maps }}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
+        {% endif %}
         <!-- ====== start contact page ====== -->
     </main>
     <!--End-Contents-->

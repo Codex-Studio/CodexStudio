@@ -32,6 +32,12 @@ class Setting(models.Model):
         verbose_name="Ссылка на бот",
         blank = True, null = True
     )
+    url_maps = models.URLField(
+        max_length=500, 
+        verbose_name="URL адрес Google Карты",
+        default="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1516.504442753528!2d72.80188400298358!3d40.519294688957466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bdaf43b0b9c00f%3A0x1aa9c672c00b1a9e!2z0JLQndCX0JjQntCd!5e0!3m2!1sru!2skg!4v1669628615604!5m2!1sru!2skg",
+        blank=True, null = True
+    )
 
     def __str__(self):
         return self.title 
