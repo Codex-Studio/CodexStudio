@@ -40,9 +40,13 @@ def portfolio_index(request):
 def portfolio_detail(request, id):
     setting = Setting.objects.latest('id')
     portfolio = Portfolio.objects.get(id = id)
+    about = AboutUs.objects.latest('id')
+    random_portfolio = Portfolio.objects.all().order_by('?')
     context = {
         'setting' : setting,
         'portfolio' : portfolio,
+        'about' : about,
+        'random_portfolio' : random_portfolio
     }
     return render(request, 'portfolio_detail.html', context)
 

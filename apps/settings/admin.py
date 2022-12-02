@@ -1,5 +1,5 @@
 from django.contrib import admin
-from apps.settings.models import Setting, ProjectType, Portfolio, Partners, Service, AboutUs, Benefits, Review, News, Contact, AboutUSImages
+from apps.settings.models import Setting, ProjectType, Portfolio, PortfolioFeatures, Partners, Service, AboutUs, Benefits, Review, News, Contact, AboutUSImages
 
 # Register your models here.
 class SettingAdmin(admin.ModelAdmin):
@@ -11,8 +11,13 @@ class ContactAdmin(admin.ModelAdmin):
 class ProjectTypeAdmin(admin.ModelAdmin):
     list_display = ["title"]
 
+class PortfolioFeaturesAdmin(admin.TabularInline):
+    model = PortfolioFeatures
+    extra = 1
+
 class PortfolioAdmin(admin.ModelAdmin):
     list_display = ["title", "description", "price", "project_type", "url"]
+    inlines = [PortfolioFeaturesAdmin]
 
 class PartnersAdmin(admin.ModelAdmin):
     list_display = ["title", "image", "url"]
@@ -48,3 +53,4 @@ admin.site.register(Review, ReviewAdmin)
 admin.site.register(News, NewsAdmin)
 admin.site.register(Contact, ContactAdmin)
 # admin.site.register(AboutUSImages)
+admin.site.register(PortfolioFeatures)

@@ -96,6 +96,22 @@ class Portfolio(models.Model):
         verbose_name = "Портфолио"
         verbose_name_plural = "Портфолии"
 
+class PortfolioFeatures(models.Model):
+    portfolio = models.ForeignKey(
+        Portfolio,
+        on_delete=models.CASCADE,
+        related_name="features_portfolio",
+        verbose_name="Портфолио"
+    )
+    title = models.CharField(
+        max_length=255,
+        verbose_name="Заголовок"
+    )
+
+    class Meta:
+        verbose_name = "Особенность портфолио"
+        verbose_name_plural = "Особенности портфолио"
+
 class Partners(models.Model):
     title = models.CharField(
         max_length=100,
