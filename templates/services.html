@@ -36,9 +36,11 @@
                                     <h5 class="card-title">
                                         {{ service.title }} от {{ service.price }}$
                                     </h5>
+                                    {% if service.description %}
                                     <p class="text">
-                                        {{ service.title }}
+                                        {{ service.description }}
                                     </p>
+                                    {% endif %}
                                 </div>
                             </a>
                         </div>

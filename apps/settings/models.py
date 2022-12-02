@@ -139,6 +139,11 @@ class Service(models.Model):
         max_length=255,
         verbose_name="Имя услуги"
     )
+    description = models.CharField(
+        max_length=255,
+        verbose_name="Описание услуги",
+        blank = True, null = True
+    )
     icon = models.ImageField(
         upload_to="service_icon/",
         verbose_name="Иконка услуги"
