@@ -203,11 +203,11 @@
                                 <div class="swiper-slide">
                                     <div class="project-card style-6">
                                         <div class="img">
-                                            <img src="{{ random.image.url }}" alt="">
+                                            <a href="{% url 'portfolio_detail' random.id %}"><img src="{{ random.image.url }}" alt=""></a>
                                         </div>
                                         <div class="info">
-                                            <h3 class="title"><a href="page-single-project-5.html">{{ random.title }}</a></h3>
-                                            <small class="color-blue6"><a href="">{{ random.project_type }}</a></small>
+                                            <h3 class="title"><a href="{% url 'portfolio_detail' random.id %}">{{ random.title }}</a></h3>
+                                            <small class="color-blue6"><a href="{% url 'portfolio_detail' random.id %}">{{ random.project_type }}</a></small>
                                             <div class="text">
                                                 {{ random.description }}
                                             </div>
