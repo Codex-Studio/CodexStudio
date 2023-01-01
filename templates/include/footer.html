@@ -36,21 +36,11 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <ul class="links">
+                                                {% for service in services %}
                                                 <li> 
-                                                    <a href="#">Сайты под ключ</a>
+                                                    <a href="{% url 'services_index' %}">{{ service.title }}</a>
                                                 </li>
-                                                <li> 
-                                                    <a href="#">Android приложения</a>
-                                                </li>
-                                                <li> 
-                                                    <a href="#">iOS приложения</a>
-                                                </li>
-                                                <li> 
-                                                    <a href="#">UX/Ui дизайн</a>
-                                                </li>
-                                                <li> 
-                                                    <a href="#">FULL PROJECT </a>
-                                                </li>
+                                                {% endfor %}
                                             </ul>
                                         </div>
                                     </div>
@@ -91,8 +81,8 @@
             </div>
         </div>
         <div class="foot bg-white p-3 rounded-pill text-center">
-            <p> By <a href="#" class="fw-bold"> @{{ setting.title }} </a> - 2022 </p>
+            <p> By <a href="#" class="fw-bold"> @{{ setting.title }} </a> - 2023 </p>
         </div>
     </div>
-    <img src="assets/img/footer/footer_4_wave.png" alt="" class="wave">
+    <img src="{% static 'assets/img/footer/footer_4_wave.png' %}" alt="" class="wave">
 </footer>

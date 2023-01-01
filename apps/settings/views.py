@@ -31,9 +31,11 @@ def index(request):
 def portfolio_index(request):
     setting = Setting.objects.latest('id')
     portfolio = Portfolio.objects.all().order_by('-id')
+    services = Service.objects.all().order_by('-id')
     context = {
         'setting' : setting,
         'portfolio' : portfolio,
+        'services' : services,
     }
     return render(request, 'portfolio.html', context)
 
@@ -42,11 +44,13 @@ def portfolio_detail(request, id):
     portfolio = Portfolio.objects.get(id = id)
     about = AboutUs.objects.latest('id')
     random_portfolio = Portfolio.objects.all().order_by('?')
+    services = Service.objects.all().order_by('-id')
     context = {
         'setting' : setting,
         'portfolio' : portfolio,
         'about' : about,
-        'random_portfolio' : random_portfolio
+        'random_portfolio' : random_portfolio,
+        'services' : services,
     }
     return render(request, 'portfolio_detail.html', context)
 
@@ -63,6 +67,7 @@ def services_index(request):
 
 def contact(request):
     setting = Setting.objects.latest('id')
+    services = Service.objects.all().order_by('-id')
     if request.method == "POST":
         name = request.POST.get('name')
         email = request.POST.get('email')
@@ -72,6 +77,7 @@ def contact(request):
         return redirect('index')
     context = {
         'setting' : setting,
+        'services': services,
     }
     return render(request, 'contact.html', context)
 
@@ -82,6 +88,7 @@ def about_us(request):
     partners = Partners.objects.all().order_by('-id')
     first_news = News.objects.all().order_by('-created')[:1]
     news = News.objects.all().order_by('-created')[1:]
+    services = Service.objects.all().order_by('-id')
     context = {
         'setting' : setting,
         'about' : about,
@@ -89,6 +96,7 @@ def about_us(request):
         'partners' : partners,
         'first_news' : first_news,
         'news' : news,
+        'services' : services,
     }
     return render(request, 'about.html', context)
 
@@ -96,19 +104,23 @@ def news_index(request):
     setting = Setting.objects.latest('id')
     news = News.objects.all().order_by('created')
     random_news = News.objects.all().order_by('?')[:1]
+    services = Service.objects.all().order_by('-id')
     context = {
         'setting' : setting,
         'news' : news,
         'random_news' : random_news,
+        'services' : services,
     }
     return render(request, 'news.html', context)
 
 def news_detail(request, id):
     setting = Setting.objects.latest('id')
     news = News.objects.get(id = id)
+    services = Service.objects.all().order_by('-id')
     context = {
         'setting' : setting,
         'news' : news,
+        'services' : services,
     }
     return render(request, 'news_detail.html', context)
 
